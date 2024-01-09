@@ -1,0 +1,1177 @@
+[
+  
+  {
+    "tourName": "Adventure in the Rockies",
+    "catagory": "Adventure",
+    "description": "Embark on an epic adventure in the Rocky Mountains, filled with hiking and thrilling experiences.",
+    "rating": 4.7,
+    "numRatings": 4,
+    "maxPeople": 15,
+    "difficulty": "medium",
+    "coverImg": "/img/tours/tour-1-1.jpg",
+    "tourImgs": ["/img/tours/tour-2-cover.jpg", "/img/tours/tour-2-1.jpg", "/img/tours/tour-3-1.jpg"],
+    "price": 1599.99,
+    "slug": "Adventure-in-the-rockies",
+    "features": [
+      "Expert Guides",
+      "Small Group Size",
+      "Customization",
+      "Audio Commentary"
+    ],
+    "coordinates": [{
+      "latLng": [40.7128, -74.0060], 
+      "description": "Adventure in wayfarer park - Day 1"
+    },{
+      "latLng": [ 40.4242, -73.4400], 
+      "description": "Horse ride - Day 2"
+    },{
+      "latLng": [ 40.7788, -72.4567], 
+      "description": "Rigging the mountain - Day 3"
+    },{
+      "latLng": [ 40.9092, -74.7514], 
+      "description": "Town villa visiting - Day 4"
+    },{
+      "latLng": [ 40.7158, -75.3070], 
+      "description": "Diving through beach waves  - Day 5"
+    }],
+    "location": "Texas",
+    "duration": "5 days",
+    "stops": 12
+  },
+  {
+    "tourName": "Romantic Paris Getaway",
+    "catagory": "Romantic",
+    "description": "Indulge in the romance of Paris, the City of Love, with your special someone.",
+    "rating": 4.8,
+    "numRatings": 4,
+    "maxPeople": 10,
+    "difficulty": "easy",
+    "coverImg": "/img/tours/tour-3-1.jpg",
+    "tourImgs": [
+      "/img/tours/tour-1-cover.jpg",
+      "/img/tours/tour-2-1.jpg",
+      "/img/tours/tour-1-1.jpg"
+    ],
+    "price": 1799.99,
+    "slug": "Romantic-paris-getaway",
+    "features": [
+      "Wine Tastings",
+      "Interactive Maps",
+      "Multilingual Tours",
+      "VIP Access"
+    ],
+    "location": "Colarando",
+    "duration": "4 days",
+    "stops": 9,
+    "coordinates": [
+      {
+        "latLng": [39.1031, -105.5577],
+        "description": "Day 1: Arrival and City Exploration"
+      },
+      {
+        "latLng": [39.0657, -105.0813],
+        "description": "Day 2: Garden of the Gods and Hiking Adventure"
+      },
+      {
+        "latLng": [39.0822, -104.8736],
+        "description": "Day 3: Cheyenne Mountain Zoo and Pikes Peak Sightseeing"
+      },
+      {
+        "latLng": [39.1108, -105.1325],
+        "description": "Day 4: Royal Gorge Bridge and Departure"
+      }
+    ]
+  },
+
+  {
+    "tourName": "Enchanted Forest Escape",
+    "catagory": "Forest",
+    "description": "Step into a world of enchantment in a mystical forest filled with wonder and adventure.",
+    "rating": 4.5,
+    "numRatings": 4,
+    "maxPeople": 15,
+    "difficulty": "medium",
+    "coverImg": "/img/tours/tour-8-3.jpg",
+    "tourImgs": [
+      "/img/tours/tour-8-cover.jpg",
+      "/img/tours/tour-8-1.jpg",
+      "/img/tours/tour-2-1.jpg"
+    ],
+    "price": 1499.99,
+    "slug": "Enchanted-forest-escape",
+    "features": [
+      "Nature Walks",
+      "Night Sky Observation",
+      "Sunset Tours",
+      "Art Gallery Visits"
+    ],
+    "location": "New york",
+    "duration": "4 days",
+    "stops": 11,
+    "coordinates": [
+      {
+        "latLng": [40.7128, -74.0060],
+        "description": "Day 1: Central Park Hike and Picnic"
+      },
+      {
+        "latLng": [40.7505055, -73.9934385],
+        "description": "Day 2: Hudson Valley Winery Tour"
+      },
+      {
+        "latLng": [42.4242, -73.9940],
+        "description": "Day 3: Catskill Mountains Hiking Excursion"
+      },
+      {
+        "latLng": [43.2072, -74.3994],
+        "description": "Day 4: Lake George Boat Tour"
+      }
+    ]
+  },
+  {
+    "tourName": "Forest Exploration",
+    "catagory": "Forest",
+    "description": "Discover the enchanting secrets of the deep forest on a journey through lush woodlands.",
+    "rating": 4.4,
+    "numRatings": 4,
+    "maxPeople": 10,
+    "difficulty": "medium",
+    "coverImg": "/img/tours/tour-6-1.jpg",
+    "tourImgs": ["/img/tours/tour-6-cover.jpg", "/img/tours/tour-6-1.jpg", "/img/tours/tour-2-1.jpg"],
+    "price": 1499.99,
+    "slug": "Forest-exploration",
+    "features": ["Folklore Performances", "Ghost Tours", "Boat Cruises", "Architectural Insights"],
+    "location": "",
+    "duration": "4 days",
+    "stops": 11,
+    "coordinates": [
+      {
+        "latLng": [30.0399384, 75.015221],
+        "description": "Day 1: Arrival and Exploration"
+      },
+      {
+        "latLng": [30.0439384, 75.014221],
+        "description": "Day 2: Hiking and Nature Walk"
+      },
+      {
+        "latLng": [30.0539384, 75.032221],
+        "description": "Day 3: Wildlife Spotting and Photography Workshop"
+      },
+      {
+        "latLng": [30.0639384, 75.041221],
+        "description": "Day 4: Night Sky Observation and Departure"
+      }
+    ]
+  },
+  {
+    "tourName": "Budget Adventure Tour",
+    "catagory": "Budget tour",
+    "description": "Experience thrilling adventures without breaking the bank on this budget-friendly tour.",
+    "rating": 4.2,
+    "numRatings": 4,
+    "maxPeople": 20,
+    "difficulty": "easy",
+    "coverImg": "/img/tours/tour-3-3.jpg",
+    "tourImgs": ["/img/tours/tour-6-cover.jpg", "/img/tours/tour-6-1.jpg", "/img/tours/tour-2-1.jpg"],
+    "price": 1099.99,
+    "slug": "Budget-adventure-tour",
+    "features": ["Natural Walks", "Photography Tours", "Educational Workshops", "Art Gallery Visits"],
+    "location": "Hariana",
+    "duration": "5 days",
+    "stops": 17,
+    "coordinates": [
+      {
+        "latLng": [28.4125, 77.0241],
+        "description": "Day 1: Arrival and Orientation"
+      },
+      {
+        "latLng": [28.4135, 77.0231],
+        "description": "Day 2: Local Market Exploration and Shopping"
+      },
+      {
+        "latLng": [28.4145, 77.0221],
+        "description": "Day 3: Historical Fort Visit and Heritage Walk"
+      },
+      {
+        "latLng": [28.4155, 77.0211],
+        "description": "Day 4: Cooking Class and Traditional Dinner"
+      },
+      {
+        "latLng": [28.4165, 77.0201],
+        "description": "Day 5: Wildlife Sanctuary Visit and Departure"
+      }
+    ]
+  },
+  {
+    "tourName": "Mystical Ruins Expedition",
+    "catagory": "Adventure",
+    "description": "Explore ancient ruins and uncover the mysteries of a bygone civilization.",
+    "rating": 4.3,
+    "numRatings": 4,
+    "maxPeople": 12,
+    "difficulty": "medium",
+    "coverImg": "/img/tours/tour-5-1.jpg",
+    "tourImgs": [
+      "/img/tours/tour-6-cover.jpg",
+      "/img/tours/tour-6-1.jpg",
+      "/img/tours/tour-2-1.jpg"
+    ],
+    "price": 1599.99,
+    "slug": "Mystical-ruins-expedition",
+    "features": [
+      "Festival Visits",
+      "Geological Tours",
+      "Military History",
+      "Local Shopping"
+    ],
+    "location": "New york",
+    "duration": "5 days",
+    "stops": 11,
+    "coordinates": [
+      {
+        "latLng": [40.7128, -74.0060],
+        "description": "Day 1: Arrival and City Exploration"
+      },
+      {
+        "latLng": [40.7505055, -73.9934385],
+        "description": "Day 2: Historical Fort Visit and Heritage Walk"
+      },
+      {
+        "latLng": [42.4242, -73.9940],
+        "description": "Day 3: Archaeological Site Visit and Tour"
+      },
+      {
+        "latLng": [43.2072, -74.3994],
+        "description": "Day 4: Museum Exploration and Cultural Experience"
+      },
+      {
+        "latLng": [40.7128, -74.0060],
+        "description": "Day 5: Departure"
+      }
+    ]
+  },
+  {
+    "tourName": "Alpine Wonderland",
+    "catagory": "Adventure",
+    "description": "Embark on a journey to the breathtaking alpine regions with thrilling activities.",
+    "rating": 4.6,
+    "numRatings": 4,
+    "maxPeople": 18,
+    "difficulty": "hard",
+    "coverImg": "/img/tours/tour-6-3.jpg",
+    "tourImgs": [
+      "/img/tours/tour-7-cover.jpg",
+      "/img/tours/tour-7-1.jpg",
+      "/img/tours/tour-7-1.jpg"
+    ],
+    "price": 1799.99,
+    "slug": "Alpine-wonderland",
+    "features": [
+      "Wellness Activities",
+      "Night Sky Observation",
+      "Bike Tours",
+      "Environmental Conservation"
+    ],
+    "location": "Chicago",
+    "duration": "3 days",
+    "stops": 11,
+    "coordinates": [
+      {
+        "latLng": [41.8818, -87.6232],
+        "description": "Day 1: Arrival and City Orientation"
+      },
+      {
+        "latLng": [42.3319, -87.8442],
+        "description": "Day 2: Mountain Hiking and Nature Exploration"
+      },
+      {
+        "latLng": [41.8818, -87.6232],
+        "description": "Day 3: Departure"
+      }
+    ]
+  },
+  {
+    "tourName": "Serenade in Venice",
+    "catagory": "Romantic",
+    "description": "Experience the enchanting beauty of Venice, perfect for a romantic serenade.",
+    "rating": 4.9,
+    "numRatings": 4,
+    "maxPeople": 10,
+    "difficulty": "easy",
+    "coverImg": "/img/tours/tour-5-2.jpg",
+    "tourImgs": [
+      "/img/tours/tour-6-cover.jpg",
+      "/img/tours/tour-6-1.jpg",
+      "/img/tours/tour-2-1.jpg"
+    ],
+    "price": 1899.99,
+    "slug": "Serenade-in-venice",
+    "features": [
+      "Volunteer Opportunities",
+      "Cultural Exchange",
+      "Underground Tours",
+      "Virtual Reality Enhancements"
+    ],
+    "location": "Miami",
+    "duration": "3 days",
+    "stops": 11,
+    "coordinates": [
+      {
+        "latLng": [25.7617, -80.1918],
+        "description": "Day 1: Arrival and City Exploration"
+      },
+      {
+        "latLng": [25.7742, -80.2019],
+        "description": "Day 2: Gondola Ride and Romantic Dinner"
+      },
+      {
+        "latLng": [25.7617, -80.1918],
+        "description": "Day 3: Art Gallery Visit and Departure"
+      }
+    ]
+  },
+  {
+    "tourName": "Enchanted Forest Escape",
+    "catagory": "Forest",
+    "description": "Step into a world of enchantment in a mystical forest filled with wonder and adventure.",
+    "rating": 4.5,
+    "numRatings": 4,
+    "maxPeople": 15,
+    "difficulty": "medium",
+    "coverImg": "/img/tours/tour-8-3.jpg",
+    "tourImgs": [
+      "/img/tours/tour-8-cover.jpg",
+      "/img/tours/tour-8-1.jpg",
+      "/img/tours/tour-2-1.jpg"
+    ],
+    "price": 1499.99,
+    "slug": "Enchanted-forest-escape",
+    "features": [
+      "Nature Walks",
+      "Night Sky Observation",
+      "Sunset Tours",
+      "Art Gallery Visits"
+    ],
+    "location": "Los angles",
+    "duration": "7 days",
+    "stops": 13,
+    "coordinates": [
+      {
+        "latLng": [34.0522, -118.2437],
+        "description": "Day 1: Arrival and Forest Orientation"
+      },
+      {
+        "latLng": [34.0452, -118.2327],
+        "description": "Day 2: Treetop Canopy Walk and Waterfall Hike"
+      },
+      {
+        "latLng": [34.0672, -118.2157],
+        "description": "Day 3: Wildlife Photography Workshop and Campfire Dinner"
+      },
+      {
+        "latLng": [34.0512, -118.2047],
+        "description": "Day 4: Nature Walk and Meditation Session"
+      },
+      {
+        "latLng": [34.0432, -118.2227],
+        "description": "Day 5: Stargazing at Night and Night Hike"
+      },
+      {
+        "latLng": [34.0592, -118.2397],
+        "description": "Day 6: Kayaking on the River and Picnic Lunch"
+      },
+      {
+        "latLng": [34.0652, -118.2437],
+        "description": "Day 7: Visit to Local Village and Cultural Exchange"
+      }
+    ]
+  }, 
+    
+  {
+    "tourName": "Budget Beach Getaway",
+    "catagory": "Budget tour",
+    "description": "Relax on a budget-friendly beach getaway and enjoy the sun and sea.",
+    "rating": 4.1,
+    "numRatings": 4,
+    "maxPeople": 14,
+    "difficulty": "easy",
+    "coverImg": "/img/tours/tour-3-1.jpg",
+    "tourImgs": [
+      "/img/tours/tour-6-cover.jpg",
+      "/img/tours/tour-6-1.jpg",
+      "/img/tours/tour-2-1.jpg"
+    ],
+    "price": 1199.99,
+    "slug": "Budget-beach-getaway",
+    "features": [
+      "Boat Cruises",
+      "VIP Access",
+      "Wellness Activities",
+      "Underground Tours"
+    ],
+    "location": "Westside",
+    "duration": "2 days",
+    "stops": 6,
+    "coordinates": [
+      {
+        "latLng": [34.0444, -118.4908],
+        "description": "Day 1: Arrival and Beach Relaxation"
+      },
+      {
+        "latLng": [34.0631, -118.5032],
+        "description": "Day 2: Boat Cruise and Departure"
+      }
+    ]
+  },
+  {
+    "tourName": "Budget Island Getaway",
+    "catagory": "Budget tour",
+    "description": "Escape to a budget-friendly island paradise and enjoy the sun, sea, and sand.",
+    "rating": 4.4,
+    "numRatings": 4,
+    "maxPeople": 18,
+    "difficulty": "easy",
+    "coverImg": "/img/tours/tour-6-1.jpg",
+    "tourImgs": [
+      "/img/tours/tour-13-2.avif",
+      "/img/tours/tour-17-3.avif",
+      "/img/tours/tour-17-1.avif"
+    ],
+    "price": 1299.99,
+    "slug": "Budget-island-getaway",
+    "features": [
+      "Interactive Maps",
+      "Small Group Sizes",
+      "Customization",
+      "Nature Walks"
+    ],
+    "location": "Island",
+    "duration": "7 days",
+    "stops": 5,
+    "coordinates": [
+      {
+        "latLng": [34.0403, -118.4421],
+        "description": "Day 1: Arrival and Island Exploration"
+      },
+      {
+        "latLng": [34.0352, -118.4391],
+        "description": "Day 2: Snorkeling and Swimming"
+      },
+      {
+        "latLng": [34.0483, -118.4451],
+        "description": "Day 3: Island Hike and Nature Walk"
+      },
+      {
+        "latLng": [34.0393, -118.4381],
+        "description": "Day 4: Local Village Visit and Cultural Exchange"
+      },
+      {
+        "latLng": [34.0403, -118.4421],
+        "description": "Day 5: Departure"
+      }
+    ]
+  },
+  {
+    "tourName": "Cultural Heritage Expedition",
+    "catagory": "Adventure",
+    "description": "Explore the rich cultural heritage of ancient civilizations on this expedition.",
+    "rating": 4.4,
+    "numRatings": 4,
+    "maxPeople": 14,
+    "difficulty": "medium",
+    "coverImg": "/img/tours/tour-18-cover.avif",
+    "tourImgs": [
+      "/img/tours/tour-13-2.avif",
+      "/img/tours/tour-13-3.avif",
+      "/img/tours/tour-13-1.avif"
+    ],
+    "price": 1599.99,
+    "slug": "Cultural-heritage-expedition",
+    "features": [
+      "Audio Commentary",
+      "Festival Visits",
+      "Interactive Maps",
+      "VIP Access"
+    ],
+    "duration": "4 days",
+    "location": "New villa",
+    "stops": 8,
+    "coordinates": [
+      {
+        "latLng": [41.8820, -87.6221],
+        "description": "Day 1: Arrival and City Exploration"
+      },
+      {
+        "latLng": [42.3391, -87.8412],
+        "description": "Day 2: Historical Temple Visit and Ritual Observation"
+      },
+      {
+        "latLng": [42.1643, -88.1333],
+        "description": "Day 3: Archaeological Site Tour and Cultural Experience"
+      },
+      {
+        "latLng": [41.6932, -88.1412],
+        "description": "Day 4: Local Village Visit and Traditional Crafts Workshop"
+      },
+      {
+        "latLng": [41.8820, -87.6221],
+        "description": "Day 5: Departure"
+      }
+    ]
+  },
+  {
+    "tourName": "Secluded Mountain Retreat",
+    "catagory": "Romantic",
+    "description": "Enjoy a romantic getaway in a secluded mountain cabin with breathtaking views.",
+    "rating": 4.9,
+    "numRatings": 4,
+    "maxPeople": 8,
+    "difficulty": "easy",
+    "coverImg": "./img/tours/tour-17-cover-img.avif",
+    "tourImgs": [
+      "/img/tours/tour-13-2.avif",
+      "/img/tours/tour-17-3.avif",
+      "/img/tours/tour-17-1.avif"
+    ],
+    "price": 1799.99,
+    "slug": "Secluded-mountain-retreat",
+    "features": [
+      "Night Sky Observation",
+      "Expert Guides",
+      "Local Artisans Visits",
+      "Hands-On Workshop"
+    ],
+    "duration": "3 days",
+    "location": "Mountain",
+    "stops": 6,
+    "coordinates": [
+      {
+        "latLng": [34.0522, -118.2437],
+        "description": "Day 1: Arrival and Cabin Check-in"
+      },
+      {
+        "latLng": [34.0452, -118.2327],
+        "description": "Day 2: Guided Hike and Picnic Lunch"
+      },
+      {
+        "latLng": [34.0672, -118.2157],
+        "description": "Day 3: Private Spa Treatment and Romantic Dinner"
+      },
+      {
+        "latLng": [34.0512, -118.2047],
+        "description": "Day 4: Stargazing and Departure"
+      }
+    ]
+  },
+  {
+    "tourName": "Safari Adventure in the Wild",
+    "catagory": "Adventure",
+    "description": "Witness the wonders of the wild on an unforgettable safari adventure.",
+    "rating": 4.8,
+    "numRatings": 4,
+    "maxPeople": 12,
+    "difficulty": "medium",
+    "coverImg": "/img/tours/tour-16-cover-img.jpg",
+    "tourImgs": [
+      "/img/tours/tour-16-2.avif",
+      "/img/tours/tour-16-3.avif",
+      "/img/tours/tour-16-1.avif"
+    ],
+    "price": 1699.99,
+    "slug": "Safari-adventure-in-the-wild",
+    "features": [
+      "Educational Workshops",
+      "Culinary Experiences",
+      "Photography Tours",
+      "Military History"
+    ],
+    "duration": "4 days",
+    "location": "Wilderness",
+    "stops": 7,
+    "coordinates": [
+      {
+        "latLng": [-25.7556, 28.2332],
+        "description": "Day 1: Arrival and Safari Camp Check-in"
+      },
+      {
+        "latLng": [-25.7456, 28.2232],
+        "description": "Day 2: Morning Game Drive and Wildlife Viewing"
+      },
+      {
+        "latLng": [-25.7356, 28.2132],
+        "description": "Day 3: Hike through the Bush and Cultural Experience"
+      },
+      {
+        "latLng": [-25.7256, 28.2032],
+        "description": "Day 4: Sunset Game Drive and Departure"
+      }
+    ]
+  },
+  {
+    "tourName": "Island Paradise Honeymoon",
+    "catagory": "Romantic",
+    "description": "Celebrate your honeymoon in a tropical island paradise with pristine beaches.",
+    "rating": 4.9,
+    "numRatings": 4,
+    "maxPeople": 10,
+    "difficulty": "easy",
+    "coverImg": "/img/tours/tour-15-cover-img.jpg",
+    "tourImgs": [
+      "/img/tours/tour-15-2.avif",
+      "/img/tours/tour-15-3.avif",
+      "/img/tours/tour-15-1.avif"
+    ],
+    "price": 1899.99,
+    "slug": "Island-paradise-honeymoon",
+    "features": [
+      "VIP Access",
+      "Wine Tastings",
+      "Expert Guides",
+      "Ghost Tours"
+    ],
+    "duration": "4 days",
+    "location": "Island",
+    "stops": 6,
+    "coordinates": [
+      {
+        "latLng": [18.1096, -66.7411],
+        "description": "Day 1: Arrival and Private Villa Check-in"
+      },
+      {
+        "latLng": [18.1196, -66.7311],
+        "description": "Day 2: Private Island Excursion and Snorkeling"
+      },
+      {
+        "latLng": [18.1296, -66.7211],
+        "description": "Day 3: Romantic Dinner on the Beach and Sunset Cruise"
+      },
+      {
+        "latLng": [18.1396, -66.7111],
+        "description": "Day 4: Couple's Spa Treatment and Departure"
+      }
+    ]
+  },
+    
+  {
+    "tourName": "Enchanted Forest Quest",
+    "catagory": "Forest",
+    "description": "Embark on a quest through an enchanted forest filled with magical creatures and wonders.",
+    "rating": 4.6,
+    "numRatings": 4,
+    "maxPeople": 12,
+    "difficulty": "medium",
+    "coverImg": "/img/tours/tour-5-1.jpg",
+    "tourImgs": [
+      "/img/tours/tour-14-2.avif",
+      "/img/tours/tour-14-3.avif",
+      "/img/tours/tour-14-1.avif"
+    ],
+    "price": 1599.99,
+    "slug": "Enchanted-forest-quest",
+    "features": [
+      "Nature Walks",
+      "Adventure Activities",
+      "Wildlife Spotting",
+      "Bike Tours"
+    ],
+    "duration": "4 days",
+    "location": "Amazon",
+    "stops": 6,
+    "coordinates": [
+      {
+        "latLng": [-3.9761, -60.0024],
+        "description": "Day 1: Arrival and Jungle Camp Check-in"
+      },
+      {
+        "latLng": [-4.0091, -59.9744],
+        "description": "Day 2: Guided Hike and Waterfall Exploration"
+      },
+      {
+        "latLng": [-4.0421, -59.9464],
+        "description": "Day 3: Canoe Trip and Wildlife Observation"
+      },
+      {
+        "latLng": [-4.0751, -59.9184],
+        "description": "Day 4: Treetop Canopy Walk and Departure"
+      }
+    ]
+  },
+  {
+    "tourName": "Budget Mountain Adventure",
+    "catagory": "Budget tour",
+    "description": "Embark on a budget-friendly mountain adventure with thrilling experiences.",
+    "rating": 4.2,
+    "numRatings": 4,
+    "maxPeople": 20,
+    "difficulty": "medium",
+    "coverImg": "/img/tours/tour-2-1.jpg",
+    "tourImgs": [
+      "/img/tours/tour-13-2.avif",
+      "/img/tours/tour-13-3.avif",
+      "/img/tours/tour-13-1.avif"
+    ],
+    "price": 1699.99,
+    "slug": "Budget-mountain-adventure",
+    "features": [
+      "Sunset Tours",
+      "Small Group Sizes",
+      "Architectural Insights",
+      "Folklore Performances"
+    ],
+    "duration": "5 days",
+    "location": "Everest",
+    "stops": 8,
+    "coordinates": [
+      {
+        "latLng": [27.9881, 86.9250],
+        "description": "Day 1: Arrival and Mountain Base Camp Check-in"
+      },
+      {
+        "latLng": [28.0121, 86.9180],
+        "description": "Day 2: Acclimatization Hike and Glacier Exploration"
+      },
+      {
+        "latLng": [28.0361, 86.9110],
+        "description": "Day 3: Scenic Mountain Pass Hike and Cultural Village Visit"
+      },
+      {
+        "latLng": [28.0601, 86.9040],
+        "description": "Day 4: Local Cuisine Workshop and Traditional Music Performance"
+      },
+      {
+        "latLng": [28.0841, 86.8970],
+        "description": "Day 5: Farewell Ceremony and Departure"
+      }
+    ]
+  },  
+  {
+    "tourName": "Majestic Ancient Temples",
+    "catagory": "Adventure",
+    "description": "Visit majestic ancient temples and uncover the mysteries of the past.",
+    "rating": 4.3,
+    "numRatings": 4,
+    "maxPeople": 16,
+    "difficulty": "medium",
+    "coverImg": "/img/tours/tour-3-1.jpg",
+    "tourImgs": ["/img/tours/tour-6-cover.jpg", "/img/tours/tour-6-1.jpg", "/img/tours/tour-2-1.jpg"],
+    "price": 1699.99,
+    "slug": "Majestic-ancient-temples",
+    "features": [
+      "Military History",
+      "Cultural Exchange",
+      "Educational Workshops",
+      "Architectural Insights"
+    ],
+    "duration": "4 days",
+    "location": "Ant villa",
+    "stops": 6,
+    "coordinates": [
+      {"latLng": [34.0522, -118.2437], "description": "Ant villa - Day 1"},
+      {"latLng": [34.1522, -118.3437], "description": "Demithrov churuch - Day 2"},
+      {"latLng": [34.2522, -118.4437], "description": "Delight villa - Day 3"},
+      {"latLng": [34.3522, -118.5437], "description": "Ant villa secerecy - Day 4"}
+    ]
+  },
+  {
+    "tourName": "Mountain Retreat",
+    "catagory": "Forest",
+    "description": "Escape to the serene mountains for a peaceful and nature-filled retreat.",
+    "rating": 4.4,
+    "numRatings": 4,
+    "maxPeople": 12,
+    "difficulty": "medium",
+    "coverImg": "/img/tours/tour-9-cover.jpg",
+    "tourImgs": ["/img/tours/tour-9-cover.jpg", "/img/tours/tour-9-2.jpg", "/img/tours/tour-9-1.jpg"],
+    "price": 1399.99,
+    "slug": "Mountain-retreat",
+    "features": [
+      "Adventure Activities",
+      "Environmental Conservation",
+      "Historical Reenactments",
+      "Volunteer Opportunities"
+    ],
+    "duration": "3 days",
+    "location": "Everest",
+    "stops": 5,
+    "coordinates": [
+      {"latLng": [27.9881, 86.9250], "description": "Everest climb - Day 1"},
+      {"latLng": [28.0881, 86.8250], "description": "zgora hike - Day 2"},
+      {"latLng": [28.1881, 86.7250], "description": "west of everest - Day 3"}
+    ]
+  }
+,
+{
+  "tourName": "Tropical Paradise Tour",
+  "catagory": "Adventure",
+  "description": "Explore the wonders of a tropical paradise, filled with adventure and discovery.",
+  "rating": 4.6,
+  "numRatings": 4,
+  "maxPeople": 14,
+  "difficulty": "medium",
+  "coverImg": "/img/tours/tour-4-2.jpg",
+  "tourImgs": ["/img/tours/tour-2-cover.jpg", "/img/tours/tour-8-2.jpg", "/img/tours/tour-7-1.jpg"],
+  "price": 1599.99,
+  "slug": "Tropical-paradise-tour",
+  "features": ["Photography Tours", "Sunset Tours", "Ghost Tours", "Multilingual Tours"],
+  "duration": "5 days",
+  "location": "Miami",
+  "stops": 7,
+  "coordinates": [
+    {"latLng": [25.7617, -80.1918], "description": "Miami - Day 1"},
+    {"latLng": [25.8617, -80.2918], "description": "Miami beach - Day 2"},
+    {"latLng": [25.9617, -80.3918], "description": "Fire fly house - Day 3"},
+    {"latLng": [26.0617, -80.4918], "description": "Lukeee town - Day 4"},
+    {"latLng": [26.1617, -80.5918], "description": "Plane tour over Miami - Day 5"}
+  ]
+},
+{
+  "tourName": "Historical Journey",
+  "catagory": "Romantic",
+  "description": "Travel through time with your loved one on a historical journey through ancient cities.",
+  "rating": 4.4,
+  "numRatings": 4,
+  "maxPeople": 10,
+  "difficulty": "medium",
+  "coverImg": "/img/tours/tour-7-1.jpg",
+  "tourImgs": ["/img/tours/tour-9-cover.jpg", "/img/tours/tour-9-2.jpg", "/img/tours/tour-9-1.jpg"],
+  "price": 1499.99,
+  "slug": "Historical-journey",
+  "features": ["Science Drives", "Folklore Performances", "Local Shopping", "Wine Tastings"],
+  "duration": "4 days",
+  "location": "Bue villa",
+  "stops": 6,
+  "coordinates": [
+    {"latLng": [34.0522, -118.2437], "description": "Bue villa - Day 1"},
+    {"latLng": [34.1522, -118.3437], "description": "Bue harmon terasatt - Day 2"},
+    {"latLng": [34.2522, -118.4437], "description": "Visting google  - Day 3"},
+    {"latLng": [34.3522, -118.5437], "description": "Miami rounding - Day 4"}
+  ]
+},
+{
+  "tourName": "Desert Adventure",
+  "catagory": "Adventure",
+  "description": "Conquer the vast and beautiful deserts on an adventurous journey through the dunes.",
+  "rating": 4.2,
+  "numRatings": 4,
+  "maxPeople": 16,
+  "difficulty": "hard",
+  "coverImg": "/img/tours/tour-9-cover.jpg",
+  "tourImgs": ["/img/tours/tour-9-cover.jpg", "/img/tours/tour-9-2.jpg", "/img/tours/tour-8-1.jpg"],
+  "price": 1699.99,
+  "slug": "Desert-adventure",
+  "features": ["Volunteer Opportunities", "Virtual Reality Enhancements", "Geological Tours", "Environmental Conservation"],
+  "duration": "6 days",
+  "location": "Desert",
+  "stops": 8,
+  "coordinates": [
+    {"latLng": [30.5852, 114.3055], "description": "Desert - Day 1"},
+    {"latLng": [30.6852, 114.4055], "description": "Camel walk - Day 2"},
+    {"latLng": [30.7852, 114.5055], "description": "Showering in Desert  - Day 3"},
+    {"latLng": [30.8852, 114.6055], "description": "Climibing the deck - Day 4"},
+    {"latLng": [30.9852, 114.7055], "description": "Horse ride - Day 5"},
+    {"latLng": [31.0852, 114.8055], "description": "Elven high villa - Day 6"}
+  ]
+},
+{
+  "tourName": "Mystical Rainforest Discovery",
+  "catagory": "Forest",
+  "description": "Embark on a mystical journey through the heart of a dense rainforest, filled with secrets and beauty.",
+  "rating": 4.5,
+  "numRatings": 4,
+  "maxPeople": 12,
+  "difficulty": "medium",
+  "coverImg": "/img/tours/tour-20-cover.avif",
+  "tourImgs": ["/img/tours/tour-13-2.avif", "/img/tours/tour-14-3.avif", "/img/tours/tour-14-1.avif"],
+  "price": 1499.99,
+  "slug": "Mystical-rainforest-discovery",
+  "features": ["Boat Cruises", "Wildlife Spotting", "Bike Tours", "Art Gallery Visits"],
+  "duration": "4 days",
+  "location": "Rainforest",
+  "stops": 7,
+  "coordinates": [
+    {"latLng": [-3.4653, -62.2159], "description": "Rainforest - Day 1"},
+    {"latLng": [-3.3653, -62.3159], "description": "Rainforest park - Day 2"},
+    {"latLng": [-3.2653, -62.4159], "description": "Rainforest adventure - Day 3"},
+    {"latLng": [-3.1653, -62.5159], "description": "Unveling the mystery of rainforest - Day 4"}
+  ]
+},  {
+  "tourName": "Majestic Temples Expedition",
+  "catagory": "Adventure",
+  "description": "Discover the grandeur of majestic temples in this fascinating expedition.",
+  "rating": 4.5,
+  "numRatings": 4,
+  "maxPeople": 16,
+  "difficulty": "medium",
+  "coverImg": "/img/tours/tour-4-cover-img.jpg",
+  "tourImgs": ["/img/tours/tour-12-2.avif", "/img/tours/tour-10-3.avif", "/img/tours/tour-12-1.avif"],
+  "price": 1699.99,
+  "slug": "Majestic-temples-expedition",
+  "features": ["Historical Reenactments", "Festival Visits", "Art Gallery Visits", "Audio Commentary"],
+  "duration": "6 days",
+  "location": "Majestic Temples",
+  "stops": 9,
+  "coordinates": [
+    {"latLng": [27.1751, 78.0421], "description": "Majestic temple - Day 1"},
+    {"latLng": [27.2751, 78.1421], "description": "Majestic villa - Day 2"},
+    {"latLng": [27.3751, 78.2421], "description": "Trump beachway - Day 3"},
+    {"latLng": [27.4751, 78.3421], "description": "Riding in heroku - Day 4"},
+    {"latLng": [27.5751, 78.4421], "description": "A day with badsha - Day 5"},
+    {"latLng": [27.6751, 78.5421], "description": "Majestic  secrecy - Day 6"}
+  ]
+},
+{
+  "tourName": "Mystical Lake Retreat",
+  "catagory": "Romantic",
+  "description": "Reconnect with your loved one in a mystical lakeside retreat surrounded by natural beauty.",
+  "rating": 4.7,
+  "numRatings": 4,
+  "maxPeople": 8,
+  "difficulty": "easy",
+  "coverImg": "/img/tours/tour-11-cover-img.jpg",
+  "tourImgs": ["/img/tours/tour-10-2.avif", "/img/tours/tour-10-3.avif", "/img/tours/tour-11-1.avif"],
+  "price": 1799.99,
+  "slug": "Mystical-lake-retreat",
+  "features": ["Interactive Maps", "Wellness Activities", "Photography Tours", "Culinary Experiences"],
+  "duration": "3 days",
+  "location": "Lakeside",
+  "stops": 5,
+  "coordinates": [
+    {"latLng": [36.7783, -119.4179], "description": "Lakeside - Day 1"},
+    {"latLng": [36.8783, -119.5179], "description": "Adventure pathway - Day 2"},
+    {"latLng": [36.9783, -119.6179], "description": "Green town - Day 3"}
+  ]
+},
+{
+  "tourName": "Tropical Rainforest Adventure",
+  "catagory": "Adventure",
+  "description": "Venture into the heart of a tropical rainforest and discover its unique flora and fauna.",
+  "rating": 4.4,
+  "numRatings": 4,
+  "maxPeople": 14,
+  "difficulty": "medium",
+  "coverImg": "/img/tours/tour-9-cover-img.jpg",
+  "tourImgs": ["/img/tours/tour-9-1.jpg", "/img/tours/tour-1-3.jpg", "/img/tours/tour-1-2.jpg"],
+  "price": 1599.99,
+  "slug": "Tropical-rainforest-adventure",
+  "features": ["Educational Workshops", "Local Shopping", "Local Artisans Visits", "Hands-On Workshop"],
+  "duration": "4 days",
+  "location": "Rainforest",
+  "stops": 7,
+  "coordinates": [
+    {"latLng": [-3.4653, -62.2159], "description": "Rainforest - Day 1"},
+    {"latLng": [-3.3653, -62.3159], "description": "Rainforest house - Day 2"},
+    {"latLng": [-3.2653, -62.4159], "description": "Deep valley - Day 3"},
+    {"latLng": [-3.1653, -62.5159], "description": "Heroku the famous temple - Day 4"}
+  ]
+},
+{
+  "tourName": "Historical City Exploration",
+  "catagory": "Romantic",
+  "description": "Explore the historical and romantic side of ancient cities with your loved one.",
+  "rating": 4.3,
+  "numRatings": 4,
+  "maxPeople": 10,
+  "difficulty": "medium",
+  "coverImg": "/img/tours/tour-9-cover.jpg",
+  "tourImgs": ["/img/tours/tour-9-1.jpg", "/img/tours/tour-9-3.jpg", "/img/tours/tour-9-2.jpg"],
+  "price": 1499.99,
+  "slug": "Historical-city-exploration",
+  "features": ["Wildlife Spotting", "Interactive Maps", "Wellness Activities", "Environmental Conservation"],
+  "duration": "2 days",
+  "location": "Historical Cities",
+  "stops": 4,
+  "coordinates": [
+    {"latLng": [41.8781, -87.6298], "description": "Historical Cities - Day 1"},
+    {"latLng": [41.9781, -87.7298], "description": "Backway temple - Day 2"}
+  ]
+}
+,
+{
+  "tourName": "Desert Oasis Adventure",
+  "catagory": "Adventure",
+  "description": "Embark on an adventure in the desert oasis, a place of beauty and wonder.",
+  "rating": 4.6,
+  "numRatings": 4,
+  "maxPeople": 14,
+  "difficulty": "medium",
+  "coverImg": "/img/tours/tour-8-cover.jpg",
+  "tourImgs": ["/img/tours/tour-8-1.jpg", "/img/tours/tour-8-2.jpg", "/img/tours/tour-8-3.jpg"],
+  "price": 1699.99,
+  "slug": "Desert-oasis-adventure", 
+  "features": ["Underground Tours", "Cultural Exchange", "Volunteer Opportunities", "Night Sky Observation"],
+  "duration": "5 days",
+  "location": "Desert ",
+  "stops": 6,
+  "coordinates": [
+    {"latLng": [25.1975, 17.2995], "description": "Desert Oasis - Day 1"},
+    {"latLng": [25.2975, 17.3995], "description": "Desert driving - Day 2"},
+    {"latLng": [25.3975, 17.4995], "description": "A day with camel - Day 3"},
+    {"latLng": [25.4975, 17.5995], "description": "A day in pyramid - Day 4"},
+    {"latLng": [25.5975, 17.6995], "description": "Valley of desert - Day 5"}
+  ]
+},
+{
+  "tourName": "Enchanted Underwater World",
+  "catagory": "Adventure",
+  "description": "Dive into the enchanting underwater world and discover the secrets of the deep.",
+  "rating": 4.5,
+  "numRatings": 4,
+  "maxPeople": 12,
+  "difficulty": "medium",
+  "coverImg": "/img/tours/tour-7-cover.jpg",
+  "tourImgs": ["/img/tours/tour-7-1.jpg", "/img/tours/tour-7-2.jpg", "/img/tours/tour-7-3.jpg"],
+  "price": 1499.99,
+  "slug": "Enchanted-underwater-world",
+  "features": ["VIP Access", "Multilingual Tours", "Geological Tours", "Virtual Reality Enhancements"],
+  "duration": "4 days",
+  "location": "Underwater",
+  "stops": 8,
+  "coordinates": [
+    {"latLng": [-33.9249, 18.4241], "description": "Underwater diving - Day 1"},
+    {"latLng": [-34.0249, 18.5241], "description": "Underwater pool - Day 2"},
+    {"latLng": [-34.1249, 18.6241], "description": "A day with dophine - Day 3"},
+    {"latLng": [-34.2249, 18.7241], "description": "Underwater ceremony - Day 4"}
+  ]
+},
+{
+  "tourName": "Budget Island Escape",
+  "catagory": "Budget tour",
+  "description": "Escape to a budget-friendly island paradise and enjoy sun, sea, and relaxation.",
+  "rating": 4.1,
+  "numRatings": 4,
+  "maxPeople": 16,
+  "difficulty": "easy",
+  "coverImg": "/img/tours/tour-6-cover.jpg",
+  "tourImgs": ["/img/tours/tour-6-1.jpg", "/img/tours/tour-6-2.jpg", "/img/tours/tour-6-3.jpg"],
+  "price": 1199.99,
+  "slug": "Budget-island-escape",
+  "features": ["Hands-On Workshop", "Photography Tours", "Bike Tours", "Night Sky Observation"],
+  "duration": "7 days",
+  "location": "Island",
+  "stops": 10,
+  "coordinates": [
+    {"latLng": [1.3521, 103.8198], "description": "Island - Day 1"},
+    {"latLng": [1.4521, 103.9198], "description": "Island hockey - Day 2"},
+    {"latLng": [1.5521, 104.0198], "description": "Wrecking the island - Day 3"},
+    {"latLng": [1.6521, 104.1198], "description": "One day at ice bridge - Day 4"},
+    {"latLng": [1.7521, 104.2198], "description": "Temple of buddah - Day 5"},
+    {"latLng": [1.8521, 104.3198], "description": " Visiting voyage - Day 6"},
+    {"latLng": [1.9521, 104.4198], "description": "Escaping the island - Day 7"}
+  ]
+},
+{
+  "tourName": "Majestic Mountain Peaks",
+  "catagory": "Adventure",
+  "description": "Conquer majestic mountain peaks and enjoy breathtaking views from the top.",
+  "rating": 4.3,
+  "numRatings": 4,
+  "maxPeople": 12,
+  "difficulty": "hard",
+  "coverImg": "/img/tours/tour-5-cover.jpg",
+  "tourImgs": ["/img/tours/tour-5-1.jpg", "/img/tours/tour-5-2.jpg", "/img/tours/tour-5-3.jpg"],
+  "price": 1599.99,
+  "slug": "Majestic-mountain-peaks",
+  "features": ["Educational Workshops", "Ghost Tours", "Historical Reenactments", "Wine Tastings"],
+  "duration": "6 days",
+  "location": "Mountain",
+  "stops": 9,
+  "coordinates": [
+    {"latLng": [36.5785, -118.2923], "description": "Visting lovely Mountain - Day 1"},
+    {"latLng": [36.6785, -118.3923], "description": "Arrvining with heroku - Day 2"},
+    {"latLng": [36.7785, -118.4923], "description": "Climbing the mountain - Day 3"},
+    {"latLng": [36.8785, -118.5923], "description": "Living in forest - Day 4"},
+    {"latLng": [36.9785, -118.6923], "description": "Mountain hiking - Day 5"},
+    {"latLng": [37.0785, -118.7923], "description": "Temple in forest - Day 6"}
+  ]
+},
+{
+  "tourName": "Secret Garden Exploration",
+  "catagory": "Forest",
+  "description": "Explore the secrets of a hidden garden in the heart of the forest.",
+  "rating": 4.4,
+  "numRatings": 4,
+  "maxPeople": 10,
+  "difficulty": "medium",
+  "coverImg": "/img/tours/tour-4-cover.jpg",
+  "tourImgs": ["/img/tours/tour-4-1.jpg", "/img/tours/tour-4-2.jpg", "/img/tours/tour-4-3.jpg"],
+  "price": 1499.99,
+  "slug": "Secret-garden-exploration", 
+  "features": ["Architectural Insights", "Adventure Activities", "Local Artisans Visits", "Folklore Performances"],
+  "duration": "3 days",
+  "location": "Forest",
+  "stops": 6,
+  "coordinates": [
+    {"latLng": [51.1657, 10.4515], "description": "Forest hostage - Day 1"},
+    {"latLng": [51.2657, 10.5515], "description": "Forest exploration - Day 2"},
+    {"latLng": [51.3657, 10.6515], "description": "Climbing the rock mountain - Day 3"}
+  ]
+},
+{
+  "tourName": "Tropical Island Adventure",
+  "catagory": "Adventure",
+  "description": "Experience thrilling adventures on a tropical island paradise.",
+  "rating": 4.6,
+  "numRatings": 4,
+  "maxPeople": 14,
+  "difficulty": "medium",
+  "coverImg": "/img/tours/tour-3-cover.jpg",
+  "tourImgs": ["/img/tours/tour-3-1.jpg", "/img/tours/tour-3-2.jpg", "/img/tours/tour-3-3.jpg"],
+  "price": 1599.99,
+  "slug": "Tropical-island-adventure",
+  "features": ["Environmental Conservation", "Science Drives", "Virtual Reality Enhancements", "Underground Tours"],
+  "duration": "5 days",
+  "location": "Tropical Island",
+  "stops": 8,
+  "coordinates": [
+    {"latLng": [10.7769, -85.792], "description": "Tropical Island - Day 1"},
+    {"latLng": [10.8769, -85.892], "description": "Tropical Island beach - Day 2"},
+    {"latLng": [10.9769, -85.992], "description": "Watermelon hostage - Day 3"},
+    {"latLng": [11.0769, -86.092], "description": "Liverpool voyage - Day 4"},
+    {"latLng": [11.1769, -86.192], "description": "Ancient temple - Day 5"}
+  ]
+},
+{
+  "tourName": "Romantic Castle Getaway",
+  "catagory": "Romantic",
+  "description": "Live out a fairy tale in a romantic castle and create lasting memories with your loved one.",
+  "rating": 4.8,
+  "numRatings": 4,
+  "maxPeople": 8,
+  "difficulty": "easy",
+  "coverImg": "/img/tours/tour-2-cover.jpg",
+  "tourImgs": ["/img/tours/tour-2-1.jpg", "castle_getaway_image2.jpg", "/img/tours/tour-2-2.jpg", "/img/tours/tour-2-3.jpg"],
+  "price": 1799.99,
+  "slug": "Romantic-castle-getaway",
+  "features": ["Wine Tastings", "Sunset Tours", "Boat Cruises", "Wellness Activities"],
+  "duration": "4 days",
+  "location": "Texas",
+  "stops": 6,
+  "coordinates": [
+    {"latLng": [51.1789, 10.4234], "description": "Castle of texas - Day 1"},
+    {"latLng": [51.2789, 10.5234], "description": "A day in texas - Day 2"},
+    {"latLng": [51.3789, 10.6234], "description": "High fly over the texas - Day 3"},
+    {"latLng": [51.4789, 10.7234], "description": "Back to home - Day 4"}
+  ]
+},
+{
+  "tourName": "Enchanted Cave Exploration",
+  "catagory": "Adventure",
+  "description": "Explore the mysteries of enchanting caves and underground wonders.",
+  "rating": 4.5,
+  "numRatings": 4,
+  "maxPeople": 12,
+  "difficulty": "medium",
+  "coverImg": "/img/tours/tour-1-cover.jpg",
+  "tourImgs": ["/img/tours/tour-1-1.jpg", "/img/tours/tour-1-2.jpg", "/img/tours/tour-1-3.jpg"],
+  "price": 1499.99,
+  "slug": "Enchanted-cave-exploration",
+  "features": ["VIP Access", "Geological Tours", "Wildlife Spotting", "Nature Walks"],
+  "duration": "3 days",
+  "location": "Miami",
+  "stops": 5,
+  "coordinates": [
+    {"latLng": [40.6892, -99.0489], "description": "Visiting maimi villa - Day 1"},
+    {"latLng": [40.7892, -99.1489], "description": "Full exploration of miami - Day 2"},
+    {"latLng": [40.8892, -99.2489], "description": "Cave of heritage - Day 3"}
+  ]
+}
+]

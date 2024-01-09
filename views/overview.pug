@@ -1,0 +1,140 @@
+mixin li(text)
+    li #{text}
+
+mixin galleryImg(url, num) 
+    .gallery-1
+        img.gallery-img(src=`${url}` alt='image of tour') 
+
+mixin renderRatingStars(rating) 
+  each i in [1, 2, 3, 4, 5]
+      - let starClass = i <= Math.round(rating) ? 'fa-solid green-text' : 'fa-regular'
+        i(class=`${starClass}` data-src=`${i}`).fa.fa-star 
+
+mixin renderReviews(review, i)
+  div(class=`slide slide-${i+1}`)
+    .customer-info
+      img.review-img(src= `${review.user.profileImg}` alt='' srcset='')
+      p #{review.user.name}
+    .customer-saying  
+      p.customer-img-saying #{review.review}
+      .star
+        +renderRatingStars(review.rating)
+            
+
+
+doctype html
+
+head
+  link(rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css")
+  link(rel='stylesheet' href='/css/style.css')
+  //- home page media queries also used here
+  link(rel='stylesheet' href='/css/detail-queries.css')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700;800;900&display=swap' rel='stylesheet')
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title= title
+body.details-body  
+  header.overview-header
+    img.header-img(src=`${tour.coverImg}` alt='' srcset='')
+    .tour-contents
+      h1.primary-heading.mg-2
+        span.first-text= tour.tourName
+      p.tour-desc
+        =tour.description
+  section.tour-informations
+    .features-and-guides.mg-7
+      .features
+        h3#green-text.tertiary-heading.mg-2 FEATURES
+        ul.features-list
+          each text in tour.features
+              +li(text)
+              
+      .loaction
+        h3#green-text.tertiary-heading.mg-2 LOCATION
+        p= tour.location    
+
+      .guides
+        h3#green-text.tertiary-heading.mg-2 GUIDES
+        .guide-box
+          .guide-detail
+            img.default-img(src='/img/users/user-10.jpg' alt='')
+            p James
+          .guide-detail
+            img.default-img(src='/img/users/user-11.jpg' alt='')
+            p william
+          .guide-detail
+            img.default-img(src='/img/users/user-12.jpg' alt='')
+            p Jasper 
+    section.reviews.mg-3
+      if(tour.numRatings > 0)
+        .heading.mg-3
+          h4#green-text.testimonial-heading TESTIMONIALS(#{tour.numRatings})
+          p.sub-heading Take a word from our customers
+        .slider.mg-7
+          .slider-container
+            each review, i in tour.reviews
+              +renderReviews(review, i)
+          .slider-btns  
+            i#green-text.slide-left.fa-solid.fa-angle-left
+            i#green-text.slide-right.fa-solid.fa-angle-right
+      else
+        .heading.mg-3
+          h4#green-text.testimonial-heading TESTIMONIALS(No reviews)
+          p.sub-heading Take a word from our customers
+
+
+        
+      
+    section.daily-plan.mg-3
+      .heading
+        h4#green-text itinerary
+        p.sub-heading Explore the richness of each day
+      #map.mg-7(data-locations=`${JSON.stringify(tour.coordinates)}`)      
+
+    .gallery-section.mg-2
+      h3#green-text.tertiary-heading.mg-3 GALLERY
+      .gallery
+          each img in tour.tourImgs
+              +galleryImg(img)
+          +galleryImg(tour.coverImg) 
+    if(userIds.includes(user._id.toString()) && booking.status === "confirmed")
+        section.customer-feedback-section.mg-5     
+          .rating-box
+            .wrap
+              h4#green-text.tertiary-heading.mg-2 How was your experience?
+              .stars
+                i(data-value="1").fa-regular.fa-star.green-text.star-size
+                i(data-value="2").fa-regular.fa-star.green-text.star-size
+                i(data-value="3").fa-regular.fa-star.green-text.star-size
+                i(data-value="4").fa-regular.fa-star.green-text.star-size
+                i(data-value="5").fa-regular.fa-star.green-text.star-size
+            .input-feedback
+              input(type="text", placeholder="Write your experience").input-customer-feedback  
+              p.feeedback-err 
+            button(data-tour-id=`${tour._id}`)#light-green.btn.green.review-feedback-btn Submit
+
+    .purchase-section
+      h1.label-tour(data-tour-price=`${tour.price}`) PRICE $ #{tour.price}
+      if(userIds.includes(user._id.toString()) && booking.status === "confirmed")
+        .btn-row
+            .tour-ratings
+              +renderRatingStars(tour.rating)
+            button#green.btn.cancel-btn( data-booking-id=`${booking ? booking._id  : null}`) Cancel booking
+
+      else
+        .btn-row
+            .tour-ratings
+              +renderRatingStars(tour.rating)
+            button#green.btn.purchase-btn( data-tour-id=`${tour._id}` data-tour-slug=`${tour.slug}`) Purchase
+            i.fa-regular.fa-bookmark.bookmark-icon( data-tour-id=`${tour._id}` )
+
+      
+      
+      
+
+
+  script(src="https://js.stripe.com/v3/") 
+  script(src='https://kit.fontawesome.com/fca77f975c.js' crossorigin='anonymous')
+  script(src='/js/dist/index.js')

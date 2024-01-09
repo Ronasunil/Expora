@@ -1,0 +1,13 @@
+/* 688 px */
+@media (max-width: 671px) {
+    
+    .tours-header{
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 4rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        }
+
+}

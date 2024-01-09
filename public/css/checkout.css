@@ -1,0 +1,210 @@
+body {
+    font-family: 'Roboto', sans-serif!important;
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+.mainscreen
+{
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+    flex-direction: column;
+    background-color: #F4FFF6;
+    color:#71C34E;
+}
+
+.green-text{
+    color:#71C34E;
+}
+
+.red-text{
+  color: #e82222;
+
+}
+
+.card {
+    display:flex;
+	width: 60rem;
+    margin: auto;
+    background: white;
+    position:center;
+    align-self: center;
+    top: 50rem;
+    border-radius: 9px;
+    box-shadow: 4px 3px 20px #3535358c;
+    flex-direction: row;
+
+    
+}
+
+.primary-heading{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+}
+
+.leftside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	background: #fff;
+    border-right: 1px solid #ddd;
+	width: 25rem;
+    gap: 1rem;
+    padding: 1rem 1rem;
+	border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+
+.product {
+    box-shadow: 1px 10px 15px #404040;
+	width: 20rem;
+    height: 20rem;
+    border-radius: 100%;
+}
+
+.rightside {
+    background-color: #fff;
+	width: 35rem;
+	border-bottom-right-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    padding: 1rem 2rem 3rem 3rem;
+}
+
+p{
+    display:block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: .8rem 0;
+}
+
+.inputbox
+{
+    color:#030303;
+	width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1.5px solid #ccc;
+    margin-bottom: 1rem;
+    font-family: 'Roboto', sans-serif;
+    color: #615a5a;
+    font-size: 1.1rem;
+    font-weight: 500;
+    outline:none;
+}
+
+.coupon-apply{
+    height: 8vh;
+}
+
+.input-coupon{
+    color:#030303;
+	width: 60%;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1.5px solid #ccc;
+    font-family: 'Roboto', sans-serif;
+    color: #615a5a;
+    font-size: 1.1rem;
+    font-weight: 500;
+    outline:none;
+}
+
+.row{
+    display: flex;
+    gap: 1rem;
+}
+
+.expcvv {
+    display:flex;
+    justify-content: space-between;
+    padding-top: 0.6rem;
+}
+
+.expcvv_text{
+    padding-right: 1rem;
+}
+.expcvv_text2{
+    padding:0 1rem;
+}
+
+.button{
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.9rem 1.5rem;
+    color: #fff;
+    background-color: #325723;
+    font-size: 1rem;
+    border-radius: 9px;
+    transition: all 0.5s;
+}
+
+.button:hover{
+    background-color:  #71C34E;
+    color: #fff;
+}
+
+.price-info {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+
+}
+
+.product-price-label{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.product-description{
+    color: #555;
+    font-size: 1rem;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    html{
+        font-size: 80%;
+    }
+
+    .mainscreen{
+        background-color: #fff;
+    }
+    .card{
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        box-shadow: none;
+    }
+
+    .leftside{
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        border-radius:0;
+    }
+
+    .rightside{
+        width:100%;
+        border-radius:0;
+    }
+
+    .inputbox{
+        width: 100%;
+    }
+}
+
+
+.w-100{
+    width: 100%;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}

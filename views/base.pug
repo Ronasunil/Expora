@@ -1,0 +1,51 @@
+doctype html
+head
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@200;400;500;600;700;800;900&family=Vina+Sans&display=swap' rel='stylesheet')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700;800;900&display=swap' rel='stylesheet')
+    link(rel='stylesheet' href='css/style.css' type='text/css')
+    link(rel='stylesheet' href='/css/home-queries.css')
+    link.title-icon(rel="icon" href="/img/Expora.png")
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title= title
+
+body.home 
+    block content
+
+
+
+footer.footer
+    .grid-4-cols
+        .company-logo
+            img.app-img(src='/img/EXPORA-removebg-preview-removebg-preview.png' alt='')
+            .social-media-icons
+                i.fa-brands.fa-instagram
+                i.fa-brands.fa-facebook
+                i.fa-brands.fa-twitter
+            p.app-copyright Copyright &copy; 2023 by Expora, Inc. All rights reserved.
+        .contact-details
+            p.footer-heading CONTACT US
+            p.address 588 William 3rd Floor ,New york SY 4576
+            .online-deatils
+                p 7564-7654-6786
+                p rona@expora.com
+        .accounts
+            p.footer-heading ACCOUNTS
+            p Create account
+            p Sign in
+            p Ios app
+            p Android app
+        .company-details
+            p.footer-heading COMPANY
+            p About expora
+            p For business
+            p Tour partner
+            p Carrers
+    p &copy; Copyright designed and developed by Rona
+
+script(src="https://js.stripe.com/v3/") 
+script(src='https://kit.fontawesome.com/fca77f975c.js' crossorigin='anonymous')

@@ -1,0 +1,23 @@
+extends _input.pug
+
+block content 
+    .detail-box
+        h1.primary-heading Booking details
+        .row-booking
+          label.name.booking-info-label User name
+          input.booking-input.email(type='text' readonly value=`${booking.user.name}`)
+        .row-booking
+          label.booking-info-label Tour name
+          input.booking-input.tour-name(type="text" readonly value=`${booking.tour.tourName}`)
+        .row-booking
+          label.booking-info-label Price
+          input.booking-input.price(type="text" readonly value=`${booking.tour.price}`)
+        .row-booking
+          label.booking-info-label Paid
+          input.booking-input.paid(type="text" readonly value=`${booking.paid === true ? 'Yes' : 'No'}`) 
+        .row-booking
+          label.booking-info-label status
+          input.booking-input.status(type="text" readonly value=`${booking.status}`)     
+        .row-booking
+          label.booking-info-label Booked date
+          input.booking-input.booked-date(type="text" readonly value=`${new Date(booking.createdAt).toLocaleDateString()}`)                             

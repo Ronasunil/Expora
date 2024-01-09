@@ -1,0 +1,42 @@
+@media (max-width: 63em) {
+    html{
+        font-size: 70%;
+    }
+
+}
+
+@media (max-width: 52em) {
+    .flex{
+       width: 50%; 
+    }
+
+    .otp-icon{
+        font-size: 8rem;
+    }
+
+
+}
+
+
+@media (max-width: 41em) {
+    html{
+        font-size: 60%;
+    }
+    .flex{
+        width: 70%;
+    }
+
+    .otp-icon{
+        font-size: 7rem;
+    }
+}
+
+@media (max-width: 25em) {
+    .flex{
+        width: 80%;
+    }
+
+    .otp-icon{
+        font-size: 6rem;
+    }
+}

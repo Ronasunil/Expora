@@ -1,0 +1,146 @@
+extends base
+
+mixin linkItems(name, goTo)
+    li
+        a.item-1.item(href=`${goTo}`) #{name}
+
+mixin tourCards(num, heading, desc, img)
+    .card
+        .step-number #{num}
+        img.card-img(src=`${img}` alt='')
+        h3.tertiary-heading.text-center #{heading}
+        p.card-desc.text-center #{desc}
+
+mixin guideTestimonial(name, word, img)
+    .guide.guide-1
+        .guide-info
+            img.guide-img(src=`${img}` alt='')
+            p.guide-name #{name}
+        p.guide-testimonial
+            | &quot; #{word}
+
+block content
+    section.section-1
+        nav.nav-bar
+            img.icon-img(src='/img/EXPORA-removebg-preview-removebg-preview.png' alt='')
+            ul.nav-items
+                +linkItems("Tours","#tours")
+                +linkItems("How it works", "#how-it-works")
+                +linkItems("Testimonial", "#testimonials")
+                +linkItems("bookmarks")
+    
+                if user
+                    li.user-profile
+                       a(href="/profile")  
+                            img.profile-img(src=`${user.profileImg}` alt='user profile picture')
+                else
+                    a#green.item-4.item.btn(href='/signup') Register
+            button.btn-mobile-nav       
+                i(name="menu-outline").mobile-nav.fa-solid.fa-bars.icon-mobile-nav
+                i(name="close-outline").mobile-nav.fa-solid.fa-x.close-icon 
+                
+        .hero-section#hero
+            .hero-left
+                .hero-text
+                    h1.primary-heading Journey Beyond Imagination
+                    p.description
+                        | Unlock a world of exploration with our tour app. From breathtaking landscapes to cultural gems, our app is your go-to platform for planning, booking, and embarking on remarkable journeys. Seamlessly navigate through a myriad of travel options, discover hidden gems, and connect with expert guides who'll turn your adventures into unforgettable experiences.
+                .btns
+                    a#green.btn(href='#how-it-works') Explore
+                    a#white.btn(href='#tours') More &darr;
+            .hero-right
+                img.hero-img(src='/img/tour.jpg' alt='tour image' srcset='')
+
+    section.section-2.featured-in#featured-in
+        h2.featured-in-heading featured in
+        .logos
+            img.logo(src='/img/logo/logo-1.png' alt='' srcset='')
+            img.logo(src='/img/logo/logo-2.jpg' alt='' srcset='')
+            img.logo(src='/img/logo/logo-3.png' alt='' srcset='')
+            img.logo(src='/img/logo/logo-4.webp' alt='' srcset='')
+
+    section.section-3.how-it-works#how-it-works
+        .how-it-work-text
+            h2.secondary-heading.tex-white How it works
+            p.how-it-work-desc Your Adventure, Simplified: Three Easy Steps to Explore the World!
+
+        div.cards
+            +tourCards("1","Browse and Discover", "Start by browsing our extensive collection of tours and destinations.", "/img/browse-llustration.jpg")
+            +tourCards("2","Customize and Plan", "Select your preferred tour and customize it to suit your preferences.", "/img/plan-illustration.jpg")
+            +tourCards("3","Enjoy your Adventure", "Embrace the thrill, savor the moment, enjoy your adventure.", "/img/tour-1.jpg")
+
+    .empty
+    section.section-4#tours
+        p.section-phrase TOURS
+        h3.tertiary-heading Unforgettable adventures, tailor-made for you
+        .tour-cards-home
+            each tour in tours
+                .tour-card
+                    img.card-img(src=`${tour.coverImg}`  alt='')
+                    p.brand-heading
+                        span.upper-part= tour.tourName 
+
+                    .icons
+                        .row
+                            p
+                                i.tour-icon.fa-solid.fa-location-dot
+                                | #{tour.location}  
+                            p
+                                i.tour-icon.fa-solid.fa-calendar-days
+                                | #{tour.duration}    
+                        .row
+                            p
+                                i.tour-icon.fa-regular.fa-flag
+                                | #{tour.stops}
+                            p
+                                i.tour-icon.fa-regular.fa-user
+                                | #{tour.maxPeople}
+                    a#light-green.btn(href=`/tour/${tour.slug}`) More
+        p.more-tours-link
+            a.more-tours(href='/tours') More tours &darr;
+        
+                
+    section.section-5.testimonial#testimonials
+        p.section-phrase HAPPY TRAVELLER
+        h3.tertiary-heading Hear It from Our Adventurers
+        .testimonial-box
+            .testimonial-message-box
+                img.customer-img(src='/img/users/user-11.jpg' alt='customer image')
+                p.testimonial-message
+                    | &quot;Our tour guide was not only knowledgeable but also passionate about Paris. We felt like we were exploring the city with a friend.&quot;
+                .author
+                    h2.author-name James
+                    h4.position Designer
+            .testimonial-message-box
+                img.customer-img(src='/img/users/user-11.jpg' alt='customer image')
+                p.testimonial-message
+                    | &quot;Our tour guide was not only knowledgeable but also passionate about Paris. We felt like we were exploring the city with a friend.&quot;
+                .author
+                    h2.author-name James
+                    h4.position Designer
+            .testimonial-message-box
+                img.customer-img(src='/img/users/user-11.jpg' alt='customer image')
+                p.testimonial-message
+                    | &quot;Our tour guide was not only knowledgeable but also passionate about Paris. We felt like we were exploring the city with a friend.&quot;
+                .author
+                    h2.author-name James
+                    h4.position Designer
+            .testimonial-message-box
+                img.customer-img(src='/img/users/user-11.jpg' alt='customer image')
+                p.testimonial-message
+                    | &quot;Our tour guide was not only knowledgeable but also passionate about Paris. We felt like we were exploring the city with a friend.&quot;
+                .author
+                    h2.author-name James
+                    h4.position Designer
+                            
+        
+
+    section.section-6.guides#guides
+        p.section-phrase GUIDES
+        h3.tertiary-heading Let our expert&rsquo;s guide you
+        .guides-saying
+            +guideTestimonial("Adam", "Welcome, fellow explorers, to a magnificent voyage through time and place. Over the course of this extraordinary tour, we will delve deep into the annals of history, unraveling the enigmatic past of this illustrious city, and at the same time, we will traverse its vibrant streets, steeped in tradition and teeming with life", "/img/guide/guide-1.avif")
+            +guideTestimonial("Jennifer", "As we embark on this epic adventure, allow your senses to be serenaded by the harmonious blend of culture and nature that unfolds before your eyes. Together, we will witness the ever-evolving story of this region, where ancient legacies coexist with the dynamic pulse of the present.", "/img/guide/guide-2.avif" )
+            +guideTestimonial("Liviya", "Our mission today is to provide you not with a mere tour but an immersion into the very essence of this destination. We aim to tantalize your taste buds with local delicacies, awe your eyes with breathtaking vistas, and ignite your curiosity with tales that have shaped this land over centuries.", "/img/guide/guide-5.avif")
+    script(src="https://js.stripe.com/v3/")         
+    script(src="/js/dist/index.js") 

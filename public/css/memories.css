@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65%;
+    background-color: #F4FFF6;
+}
+
+.memories-container{
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.memories-inputs{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    background-color: #fff;
+    border-radius: 9px;
+    padding: 2rem 1rem;
+    width: 35%;
+    padding: 2rem 5rem;
+    box-shadow: 1px 1px 15px #ddd;
+}
+
+.memories-img{
+    width: 51%;
+    box-shadow: 1px 1px 10px #ddd;
+    border-radius: 9px;
+}
+
+#map{
+    height: 10rem;
+    width: 100%;
+    border-radius: 9px;
+
+}
+
+.heading{
+    font-family: 'Bebas Neue', sans-serif;
+    color: #71C34E;
+    font-size: 2.5rem;
+}
+
+.input{
+    font-size: 1rem;
+    width: 100%;
+    outline: none;
+    border-radius: 9px;
+    padding: 0 1.1rem;
+    height: 3rem;
+    border: 1px solid #71C34E;
+    transition: all 0.3s;
+}
+
+.input-memory-deatils{
+    font-size: 1rem;
+    width: 100%;
+    outline: none;
+    border:none;
+    height: 3rem;
+    border-bottom: 1px solid #71C34E;
+    transition: all 0.3s;
+}
+
+.input:hover{
+    outline: none !important;
+    border:1px solid #71C34E;
+    box-shadow: 0 0 10px #71C34E;
+}
+
+
+
+.hide{
+    opacity: 0;
+    width: 0%;
+    flex: 0;
+}
+
+
+.add-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 64%;
+}
+
+
+.btn{
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.6rem 1.6rem;
+    text-transform: capitalize;
+    background-color: #71C34E;
+    border-radius: 9px;
+    color: #fff;
+    border:none;
+    transition: all 0.5s;
+    
+}
+
+
+.btn:hover{
+    background-color: #67b248;
+    box-shadow: 1px 1px 10px #5b9d3f;
+}
+
+
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0.3rem;
+}
+
+
+
+.message{
+    font-size: 0.8rem;
+    align-self: start;
+    color: #e03131;
+}
+
+.input-label{
+    padding: 0.2rem 0.3rem;
+    font-size: 0.9rem;
+    align-self: start;
+    color: #555
+}

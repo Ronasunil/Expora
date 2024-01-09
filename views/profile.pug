@@ -1,0 +1,128 @@
+doctype html
+head
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@200;400;500;600;700;800;900&family=Vina+Sans&display=swap' rel='stylesheet')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700;800;900&display=swap' rel='stylesheet')
+
+    link(rel="stylesheet", href="css/settings.css")
+    link(rel='stylesheet' href='/css/profile-queries.css')
+    link.title-icon(rel="icon" href="/img/Expora.png")
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title= title
+
+
+
+    .admin-container
+        .sidebar
+            .admin-info
+                label(for='file-input')
+                    img.admin-img(src=`${user.profileImg}` alt='profile img')
+                input#file-input(type='file')
+
+                .admin-deatils
+                    h3.admin-name= user.name
+                    p.admin-active= user.role 
+            .admin-actions
+                if user.role == 'user' || user.role === 'guide'
+                    a.profile-btn.user-profile-btn
+                        i.fa-regular.fa-user.icon
+                        p profile                           
+                    a.profile-btn.security-btn
+                        i.fa-solid.fa-lock.icon
+                        p security
+                    a.profile-btn.feedback-btn
+                        i.fa-solid.fa-message.icon
+                        p feedback
+                    a.profile-btn.bookings-btn
+                        i.fa-solid.fa-calendar-days.icon
+                        p bookings
+                    a.profile-btn.memories-btn
+                        i.fa-solid.fa-location-arrow.icon
+                        p memories
+                    a.profile-btn.bookmark-user-btn
+                        i.fa-solid.fa-bookmark.icon                    
+                        p bookmarks
+                if user.role == 'admin'
+                    a.profile-btn.user-profile-btn
+                        i.fa-regular.fa-user.icon
+                        p profile                  
+                    a.profile-btn.users-btn
+                        i.fa-solid.fa-user.icon
+                        p users
+                    a.profile-btn.admin-bookings-btn
+                        i.fa-solid.fa-calendar-days.icon
+                        p bookings
+                    a.profile-btn.tours-btn
+                        i.fa-solid.fa-plane-departure.icon
+                        p all tours
+                    a.profile-btn.notification-btn
+                        i.fa-solid.fa-bell.icon
+                        p notification   
+                    a.profile-btn.coupon-btn
+                        i.fa.fa-tag.fa-solid                 
+                        p coupon     
+                    a.profile-btn.analytics-btn
+                        i.fa-solid.fa-chart-simple.icon                    
+                        p analytics   
+                                                                  
+            a.logout-btn(href='/api/v1/users/logout')
+                i.fa.fa-sign-out
+                |  Logout
+        .dashboard
+            nav.navbar
+                h3.nav-dash-board profile
+                // <div class="admin-actions">
+                //
+                    <ul class="admin-links">
+                    <li><button class="link-btn btn-1"><a href="" class="admin-link link-1">Active user</a></button></li>
+                    <li><button class="link-btn btn-2"><a href="" class="admin-link link-2">Statistics</a></button></li>
+                    </ul>
+                // <input class="search" type="text" placeholder="Search..." >
+                img.app-icon(src='/img/EXPORA-removebg-preview-removebg-preview.png' alt='app icon' srcset='')
+                // </div>
+            .dash-board-items
+                .items
+                    .row
+                        p.date 
+                    p.dashboard-heading profile
+                    .dash-board-actions
+                    
+                .dash-board-commodity
+                    .user-profile
+                        input#profile-photo.hide(type='file' name='' accept='image/*')
+                        label.user-img(for='profile-photo')
+                            img.profile-img(src=`${user.profileImg}` alt='${user.name}' srcset='')
+                        form.user-profile-form
+                            .column
+                                label.profile-form-label Name 
+                                input.input-text.input-profile-name(type='text' placeholder='Name' value=`${user.name}` required='required' pattern='[a-zA-Z]*' title='Enter your name' maxlength='3')
+                            .column
+                                label.profile-form-label About 
+                                input.input-text.input-profile-about(type='text' placeholder='About you' required='' minlength='8' maxlength='100' title='At least 8 characters and maximum of 100 characters' value=`${user.about}`)
+                            .column
+                                label.profile-form-label Email 
+                                input.input-text.input-profile-email(type='email' required='required' value=`${user.email}`)
+                            p.profile-err.hide Something went wrong 
+                            button.btn.profile-form-btn save    
+
+ 
+
+                        
+
+            
+
+    script(src='https://kit.fontawesome.com/fca77f975c.js' crossorigin='anonymous')
+    script(src="https://js.stripe.com/v3/") 
+    script(src="js/dist/index.js") 
+
+   
+
+
+
+//- <i class="fa-solid fa-plus icon hide"></i>
+//- <i class="fa fa-sort sort-icon"></i>
+//- <input class="admin-search" type="text" placeholder="search..."/>

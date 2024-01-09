@@ -1,0 +1,36 @@
+/* 944 px */
+@media (max-width: 59em) {
+    html{
+        font-size: 90%;
+    }
+
+    .login-box{
+        height: 90vh;
+    }
+
+
+}
+
+/* 752 px */
+@media (max-width: 47em) {
+    html{
+        font-size:75%;
+    }
+
+}
+
+@media (max-width: 36em){
+
+    .login-container{
+        display: block;
+        height: 100vh;
+        width: 100%;
+        background-color: #F4FFF6;
+        gap: 2rem;
+        width: 100%;
+    }
+    .login-box {
+        height: 100vh;
+        width: 100%;
+    }
+}

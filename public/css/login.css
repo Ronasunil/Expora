@@ -1,0 +1,253 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #555;
+    position: relative;
+    
+}
+
+
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:#F4FFF6;
+    gap: 2rem;
+
+
+}
+
+.primary-heading{
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    font-size: 3.4rem;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #71C34E;
+}
+.login-box{
+    display: flex;
+    padding: 1rem 1rem 1rem 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:1.3rem;
+    width: 30rem;
+    height: 36rem;
+    background-color: #fff;
+    border-radius: 9px;
+    transition: all 0.8s;
+
+
+}
+
+.login-box:hover{
+    box-shadow: 0 12px 2px #71C34E; ;
+}
+
+.detail-box{
+    display: flex;
+    padding: 1rem 1rem 1rem 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:1.3rem;
+    width: 30rem;
+    height: 36rem;
+    background-color: #fff;
+    border-radius: 9px;
+    box-shadow: 1px 1px 10px #71C34E;
+}
+
+
+
+.login-form, .forget-password-form, .coupon-form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 70%;
+}
+
+.show-password{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.row{
+    display: flex;
+    flex-direction:column;
+    gap: 0.3rem;
+    
+}
+input{
+    font-family: 'Inter';
+    border: 1px solid #71C34E;;
+    border-radius: 9px;
+    outline: none;
+    padding: 1rem;
+    font-size: 0.9rem;
+    transition: all 0.5s;
+}
+
+input[type=text]:focus {
+    border: 1px solid #71C34E;;
+    border-radius: 9px;
+  }
+
+  input[type=password]:focus {
+    border: 1px solid #71C34E;;
+  }  
+.row input{
+    height: 3.2rem;
+    
+}
+
+input:invalid{
+    border-color: #e03131;
+    color: #e53232;
+    
+  }
+
+  input:valid{
+    border-color: #71C34E;
+    color: #000;
+  }
+
+input:required:focus~input:required, input:required:focus {
+    border: 1px solid #FFF;
+    background-color: #F4FFF6;
+    box-shadow: 0 0 3px 1px #71C34E;
+}
+
+.row label{
+    text-transform: uppercase;
+    font-size: 0.79rem;
+    font-weight: 700;
+    color: #71C34E;;
+}
+
+.login-btn, .recovery-btn, .add-coupon-btn{
+    height: 3.5rem;
+    align-items: end;
+    transition: all 0.5s;
+    background-color: #71C34E;;
+    border: none;
+    border-radius: 9px;
+    color: #f8f0fc;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.login-btn:hover, .recovery-btn:hover{
+    /* padding: 1rem 3rem 1rem 3rem;
+    background-color: #862e9c;
+    border-radius: 9px;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #f8f0fc; */
+    background-color:#71C34E;;
+    transform: translateY(-2px);
+   
+}
+
+
+.login-footer{
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    color: #a9cb9a;
+}
+
+.img-icon{
+    width: 6rem;
+    background-color: #F4FFF6;
+}
+
+/* .msg-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 8vh;
+    width: 25%;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+    font-size: 1rem;
+    color: #fff;
+  
+  }
+  
+  .error{
+    background-color: #e82e2e;
+  }
+  
+  .success{
+    background-color: #71C34E;
+  } */
+
+  .message-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    border: 1px solid #71C34E;
+    letter-spacing: 1px;
+    border-radius: 9px;
+    text-align: center;
+}
+
+.error-container{
+    border: 1px solid #e03131;
+    color: #e03131;
+}
+
+
+.label-forget-password{
+    text-transform: capitalize;
+    align-self: flex-end;
+    cursor: pointer;
+    transition: all0.3s;
+}
+
+
+.label-forget-password:hover{
+    text-decoration: underline;
+    color: #71C34E;
+
+}
+
+
+.booking-info-label{
+    align-self: flex-start;
+}
+
+
+.booking-input{
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #71C34E;
+    height: 1rem;
+    padding: 1.2rem 0.2rem;
+}
+
+
+.row-booking{
+    display: flex;
+    flex-direction: column;
+}

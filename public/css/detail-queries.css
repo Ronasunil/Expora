@@ -1,0 +1,37 @@
+@media (max-width: 56em) {
+    html{
+        font-size: 80%;
+    }
+
+    .tour-informations{
+        padding: 3rem 5rem;
+    }
+}    
+
+
+@media (max-width: 44em) {
+
+    html{
+        font-size: 75%;
+    }
+
+
+
+    .tertiary-heading{
+        font-size: 1.3rem;
+    }
+
+
+    .tour-informations{
+        padding: 3rem 4rem;
+    }
+
+    .features-and-guides {
+        gap: 3rem;
+    }
+
+    .header-img{
+        height: 40vh;
+    }
+
+}    

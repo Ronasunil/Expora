@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65%;
+  }
+
+
+.top-background {
+    height: 40vh;
+    background-color: #325723;
+}
+
+.bottom-background {
+    height: 60vh;
+    background-color: #000;
+}
+
+.otp-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 9px;
+    height: 82vh;
+    width: 100%;
+    background-color: #000;
+    font-size: 1rem;
+    padding: 2rem 2rem;
+  }
+
+
+  .flex {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    width: 40%;
+    border-radius: 9px;
+    transform: translateX(-50%);
+    border: 1px solid #fff;
+    height: auto;
+}
+
+  .otp-icon-and-text{
+    display: contents;
+  }
+  
+  .otp-text{
+    color: #fff;
+  }
+  
+  .otp{
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 900;
+  }
+  
+  .otp-icon{
+    font-size: 10rem;
+    color: #71C34E;
+  }
+  
+  .input-otp{
+    width: 36%;
+    background-color: #000;
+    height: 10vh;
+    border: none;
+    border-bottom: 1px solid #71C34E;
+    outline: none;
+    color: #fff;
+    
+  }
+
+
+  .reset-password-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+}
+
+#green {
+    background-color: #325723;
+    color: #fff;
+}
+
+
+.btn {
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 9px;
+    transition: all 0.5s;
+}
+
+
+.btn:hover {
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 9px;
+    transition: all 0.5s;
+}
+
+.input{
+    width: 100%;
+    background-color: #000;
+    height: 3vh;
+    border: none;
+    border-bottom: 1px solid #71C34E;
+    outline: none;
+    color: #fff;
+}
+  
+  
+  .err-otp-paragraph{
+    color: #e82222;
+  }
+  
+  .success-otp-paragraph{
+    color: #71C34E;
+  }
+  
+  .input-otp::placeholder{
+    /* transform: translateY(20px); */
+    color: #fff;
+  }
+  
+
+.reset-password-btn{
+    align-self: center;
+}
+
+.input:invalid {
+    border-bottom-color:#e82222; /* Customize the border color for invalid state */
+ }
+
+.input:valid{
+    border-bottom-color:#71C34E;
+}
+
+
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0.3rem;
+}
+
+
+
+.message{
+    font-size: 0.8rem;
+    align-self: start;
+    color: #e03131;
+}
+

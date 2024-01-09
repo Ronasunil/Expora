@@ -1,0 +1,21 @@
+extends _input
+
+block content 
+  head 
+    link(rel="stylesheet", href="/css/login-queries.css")
+    .login-box
+      h1.primary-heading welcome back
+      form.login-form(a='')
+        .row
+          label(for='username') Email
+          input.email(type='email' name='username' required='' placeholder="yourmail@gmail.com")
+        .row
+          label(for='password') password
+          input.password(type='password' name='password' required='' pattern='(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title="incorrect password"  placeholder="Password")
+          label(for="").label-forget-password Forget password?
+          .show-password
+            input.password-checkbox(type='checkbox')
+            label(for='') show password
+        button.login-btn(type='submit') Log in
+        .message-container
+          h3 Don&apos;t Hesitate

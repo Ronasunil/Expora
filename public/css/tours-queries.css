@@ -1,0 +1,41 @@
+/* 688 px */
+@media (max-width: 43em) {
+    
+    .tours-header{
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 4rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        }
+
+    .tours{
+        grid-template-columns: 2fr 5fr;
+    }    
+
+}
+
+
+@media (max-width: 31em) {
+    .custom-options {
+        width: 20%;
+        height: 3vh;
+    }
+
+    .options{
+        width: 20%;
+        height: 3vh;
+    }
+
+    .tours-header{
+        padding: 2rem 1rem;
+    }
+
+
+    .search-bar{
+        width: 50%;
+        height: 3vh;
+    }
+
+}

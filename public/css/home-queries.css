@@ -1,0 +1,217 @@
+/* 1056 px desktop  */
+@media (max-width: 66em) {
+    html{
+        font-size: 90%;
+    }
+
+
+    .hero-left{
+        gap: 3.5rem;
+    }
+}
+
+
+
+/* 896 px small screen laptops  */
+@media (max-width: 56em) {
+    html{
+        font-size: 80%;
+    }
+
+    .primary-heading{
+        font-size: 3rem;
+    }
+
+    .tertiary-heading{
+        font-size: 1.2rem;
+    }
+
+    .hero-img{
+        height: 30vh;
+    }
+
+    .card-desc{
+        font-size: 0.9rem;
+
+    }
+
+    .cards{
+        gap: 2rem;
+        padding: 1rem 2.5rem;
+    }
+
+    .description{
+        font-size: 1rem;
+    }
+
+    .grid-4-cols{
+        gap: 5rem;
+    }
+
+    .guide-img{
+        height: 8rem;
+    }
+
+    .guide-testimonial{
+        font-size: 0.9rem;
+
+    }
+    .testimonial-box{
+        height:60vh;
+    }
+
+    .testimonial-message-box {
+        height: 50vh;
+    }
+
+    .testimonial-message{
+        font-size: 2rem;
+    }
+    .author-name{
+        font-size: 2.1rem;
+    }
+}
+
+
+/* 704 px tablets */
+
+@media (max-width: 44em) {
+
+    html{
+        font-size: 75%;
+    }
+    .hero-section{
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .hero-left{
+        gap: 2rem;
+    }
+    .hero-img{
+        height: 30vh;
+    }
+
+    .cards{
+        padding: 1rem 1rem;
+    }
+    .secondary-heading{
+        font-size: 3.2rem;
+    }
+
+    .empty{
+        height: 25rem;
+    }
+
+    .testimonial-message-box{
+        margin: 0 4rem;
+    }
+
+    .guide{
+        gap: 0.8rem;
+        flex-direction: column;
+    }
+
+    .guide-img{
+        height: 8rem;
+    }
+
+    .guide-testimonial{
+        font-size: 1rem;
+    }
+
+    .testimonial-message{
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .cards{
+        gap: 1rem;
+    }
+
+    .nav-items{
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.942);
+        height: 100vh;
+        width: 100%;
+        gap: 2rem;
+        position: absolute;
+        top:0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transition: all 0.5s;
+    }
+
+    .nav-open .nav-items{ 
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+
+    .btn-mobile-nav {
+        display: block;
+      }
+
+    .nav-open .mobile-nav[name="close-outline"] {
+        display: block;
+    } 
+    
+    .nav-open .mobile-nav[name="menu-outline"] {
+        display: none;
+    }
+
+    .grid-4-cols{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+}
+
+
+/* 506px  for phones  */
+
+@media (max-width: 32em) {
+    html{
+        font-size: 70%;
+    }
+    .tour-card{
+        width: 70%;
+    }
+    .grid-4-cols{
+        gap: 4rem;
+    }
+
+    .testimonial-box {
+        height: 45vh;
+    }
+
+    .testimonial-message{
+        font-size: 1.2rem;
+    }
+
+    .testimonial-message-box {
+        height: 35vh;
+    }
+
+    .testimonial-message-box{
+        margin: 0 2rem;
+    }
+
+    .guide-testimonial{
+        font-size: 0.9rem;
+    }
+
+    .cards{
+        gap: 0.5rem;
+        padding: 1rem 0.3rem;
+    }
+    .tertiary-heading{
+        font-size: 1rem;
+    }
+}
+

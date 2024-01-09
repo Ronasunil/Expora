@@ -1,0 +1,20 @@
+extends _memories-base
+
+block content   
+    form.memories-inputs(action='')
+      h1.heading Memories
+      label.add-img(for='file')
+        input#file.hide(type='file' accept="image/*" required)
+        label.err-message-photo.message
+        img.memories-img(src='/img/add-image.png' alt='')
+      div.input-location.column
+        input.input.memories-location(type='text' placeholder='Location' required='')
+        label.err-message-location.message
+      div.input-descripition.column
+        input.input.memories-description(type='text' placeholder='description' required)
+        label.err-message-description.message
+      div.input-dates.column
+        input.input.memories-date(type='date' placeholder='Location' required='')
+        label.err-message-date.message 
+      #map
+      button.btn.memories-submit-btn Submit

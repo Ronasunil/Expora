@@ -1,0 +1,17 @@
+extends _memories-base
+
+block content
+    form.memories-inputs(action='')
+      h1.heading Memories
+      img.memories-img(src=`/${memories.photo}` alt='Picture of your memory')
+      div.input-location.column
+        label.input-label Location
+        input.input-memory-deatils.memories-location(type='text' value=`${memories.location}` readonly="readonly")
+      div.input-descripition.column
+        label.input-label Description
+        input.input-memory-deatils.memories-description(type='text' value=`${memories.description}` readonly="readonly")
+      div.input-dates.column
+        label.input-label Date
+        input.input-memory-deatils.memories-date(type='text' value=`${new Date(memories.date).toLocaleDateString()}` readonly="readonly")
+
+      #map

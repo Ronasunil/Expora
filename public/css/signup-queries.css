@@ -1,0 +1,57 @@
+/* 944 px */
+@media (max-width: 59em) {
+    html{
+        font-size: 80%;
+    }
+
+    .signup-container{
+        height: 90vh;
+    }
+
+
+}
+
+/* 752 px */
+@media (max-width: 47em) {
+    html{
+        font-size:75%;
+    }
+
+}
+
+@media (max-width: 36em) {
+    html{
+        font-size: 83%;
+    }
+
+    body{
+        background-color: #fff;
+    }
+
+    .signup-box-login-desc{
+        display: block;
+        color: #555;
+        text-align: center;
+    }
+
+    .signup-container{
+        box-shadow: none;
+    }
+
+    .container{
+        padding: 0;
+    }
+
+    .primary-heading{
+        color: #71C34E;
+    }
+
+    .signup-container{
+        display: block;
+    }
+
+    .img-box{
+        display: none;
+    }
+
+}

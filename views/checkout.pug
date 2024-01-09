@@ -1,0 +1,49 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700;800;900&display=swap' rel='stylesheet')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(href='https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@200;400;500;600;700;800;900&family=Vina+Sans&display=swap' rel='stylesheet')
+
+
+
+  link(rel='stylesheet' href='/css/checkout.css')
+  title Document
+.mainscreen
+  .card
+    .leftside
+
+      img.product(src=`${tour.coverImg}`)
+      h2= tour.tourName
+      .product-details
+        .price-info
+          p.product-price-label Price: $#{tour.price} 
+
+        h4.product-description= tour.description 
+    .rightside
+      form.checkout-form(action='')
+        h1.primary-heading CheckOut
+        h3 Payment Information
+        p Cardholder Name
+        input.inputbox(type='text' name='name' required=''  pattern="[a-zA-Z]*" title="Cardholder name must be in letter")
+        p Card Number
+        input#card_number.inputbox(type='text' name='card_number' required='' minlength='16' maxlength='19' title='Card number must have 16 or 19 characters')
+        p Coupon
+        .row
+          .column
+            input.input-coupon.coupon(type='text'  maxlength="6")
+            p.coupon-err-label
+          button.button.coupon-apply(data-tour-id=`${tour._id}`)  Apply coupon
+        .expcvv
+          p.expcvv_text Expiry
+          input#exp_date.inputbox(type='date' name='exp_date' required='')
+          p.expcvv_text2 CVV
+          input#cvv.inputbox(type='password' name='cvv' required='')
+        p
+        button.checkout-btn.button.w-100(type='submit' data-tour-id=`${tour._id}` data-booking-date=`${bookingDate}`) CheckOut
+
+script(src="https://js.stripe.com/v3/") 
+script(src="/js/dist/index.js") 

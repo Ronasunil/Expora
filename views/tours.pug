@@ -1,0 +1,98 @@
+extends base
+
+mixin icons(place, stop, days, peopleCount) 
+    .row
+      p.icon-text
+        i.tour-icon.fa-solid.fa-location-dot
+        |  #{place}
+      p.icon-text
+        i.tour-icon.fa-solid.fa-calendar-days
+        |  #{days}
+    .row
+      p.icon-text
+        i.tour-icon.fa-regular.fa-flag
+        |  #{stop}
+      p.icon-text
+        i.tour-icon.fa-regular.fa-user
+        |  #{peopleCount}       
+
+
+
+block content
+  head 
+    link(rel="stylesheet", href="/css/tours-queries.css")
+    .tours-container
+      header.tours-header
+        img.icon-img(src='/img/EXPORA-removebg-preview-removebg-preview.png' alt='' srcset='')
+        .actions
+          .custom-options.all-tours 
+            p All tours
+          .custom-options.top-tours 
+            p Top 5 tours
+          select.options(name='' id='')
+            option(value='') All
+            option(value='rating[gt]=4.5') Most popular
+            option(value='sort=price') Low to high
+            option(value='sort=-price') High to low
+            option(value='difficulty=hard') Hard 
+            option(value='difficulty=easy') Easy
+            option(value='difficulty=medium') Medium
+            option(value='catagory=Adventure') Adventure 
+            option(value='catagory=Forest') forest 
+            option(value='catagory=Romantic') Romantic 
+            option(value='catagory=Budget tour') Budget tour
+          input.search-bar(type='search')
+      section.tours
+        //- .catogrizing-opt
+        //-     .budget-box 
+        //-       p.catagorey-text Budget
+        //-         .budget.budget-1 
+        //-             input.checkbox-default(type="checkbox") 
+        //-             p.budget-range below $1200
+        //-         .budget.budget-1 
+        //-             input.checkbox-default(type="checkbox") 
+        //-             p.budget-range below $1500   
+        //-         .budget.budget-1 
+        //-             input.checkbox-default(type="checkbox") 
+        //-             p.budget-range below $1700    
+        //-         .budget.budget-1 
+        //-             input.checkbox-default(type="checkbox") 
+        //-             p.budget-range below $2000      
+        //-     .budget-box 
+        //-       p.catagorey-text Budget
+        //-         .budget.budget-1 
+        //-             input.checkbox-default(type="checkbox") 
+        //-             p.budget-range below $1200
+        //-         .budget.budget-1 
+        //-             input.checkbox-default(type="checkbox") 
+        //-             p.budget-range below $1500   
+        //-         .budget.budget-1 
+        //-             input.checkbox-default(type="checkbox") 
+        //-             p.budget-range below $1700    
+        //-         .budget.budget-1 
+        //-             input.checkbox-default(type="checkbox") 
+        //-             p.budget-range below $2000     
+        //-     .budget-box 
+        //-       p.catagorey-text Budget
+        //-         .budget.budget-1 
+        //-             input.checkbox-default(type="checkbox") 
+        //-             p.budget-range below $1200
+        //-         .budget.budget-1 
+        //-             input.checkbox-default(type="checkbox") 
+        //-             p.budget-range below $1500   
+        //-         .budget.budget-1 
+        //-             input.checkbox-default(type="checkbox") 
+        //-             p.budget-range below $1700    
+        //-         .budget.budget-1 
+        //-             input.checkbox-default(type="checkbox") 
+        //-             p.budget-range below $2000                                                                                         
+        .all-tours
+          p.section-phrase TOURS
+          h3.tertiary-heading Explore all the tours
+
+          .tour-cards
+
+                 
+    script(src="https://js.stripe.com/v3/") 
+    script(src='https://kit.fontawesome.com/fca77f975c.js' crossorigin='anonymous')
+    script(src="/js/dist/index.js") 

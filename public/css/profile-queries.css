@@ -1,0 +1,95 @@
+/* 240 px */
+@media (min-width: 15em) {
+    html{
+        font-size: 70%;
+
+    }
+
+    .dash-board-items {
+        max-height: 74vh;
+    }
+
+    .dashboard-heading {
+        font-size: 0.7rem;
+    }
+
+    .date {
+        font-size: 0.7rem;
+    }
+
+    .coupon-container{
+        padding: 1rem 1rem;
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+/* 528px */
+@media (min-width: 33em) {
+    html{
+        font-size: 80%;
+
+    }
+
+    .dash-board-items {
+        max-height: 62vh;
+    }
+
+    .dashboard-heading {
+        font-size: 0.9rem;
+    }
+
+    .date {
+        font-size: 1rem;
+    }
+
+    .dash-board-actions {
+        width: 10%;
+    }
+
+    .coupon-container{
+
+        flex-direction: row;
+        height: fit-content;
+
+    }
+
+
+
+}
+
+/* 976 px */
+@media (min-width: 61em) {
+    html{
+        font-size: 85%;
+
+    }
+
+    .dash-board-items {
+        max-height: 72vh;
+    }
+
+    .dashboard-heading {
+        font-size: 1.3rem;
+    }
+
+    .date {
+        font-size: 1.5rem;
+    }
+
+    .dash-board-actions {
+        width: 10%;
+    }
+
+
+
+
+
+}
+
+@media (min-width: 67em) {
+    html{
+        font-size: 100%;
+
+    }
+}

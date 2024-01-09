@@ -1,0 +1,15 @@
+extends _oath-base
+
+block content 
+  
+    .otp-form 
+      .otp-icon-and-text
+        i.fa-solid.fa-lock.otp-icon
+        p.otp OTP
+        p.otp-text Enter the otp to verify your Email
+      
+      input.input-otp(placeholder='otp' type='text')
+      p.otp-para
+      p.resend-otp resend otp 
+      btn#green.btn.btn-otp ok
+
