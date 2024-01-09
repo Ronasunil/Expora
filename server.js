@@ -9,14 +9,18 @@ process.on("uncaughtException", (err) => {
 
 dotenv.config({ path: "./config.env" });
 
-mongoose
-  .connect(process.env.LOCAL_DATABASE)
-  .then(() => {
-    console.log("connected to DB");
-  })
-  .catch((err) => {
+mongoose.set("bufferCommands", false);
+
+const startDB = async function () {
+  try {
+    await mongoose.connect(process.env.LOCAL_DATABASE);
+    console.log("started db");
+  } catch (err) {
     console.log(err);
-  });
+  }
+};
+
+startDB();
 
 const app = require("./app.js");
 
