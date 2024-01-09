@@ -2,6 +2,8 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const webSocketHandler = require("./wsManger.js");
 
+mongoose.Promise = global.Promise;
+
 process.on("uncaughtException", (err) => {
   console.log(err);
   process.exit(1);
@@ -14,9 +16,6 @@ const startDB = async function () {
     await mongoose.connect(process.env.LOCAL_DATABASE, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
-      serverSelectionTimeoutMS: 30000,
     });
     console.log("started db");
   } catch (err) {
