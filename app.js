@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const rateLimit = require("express-rate-limit");
 const mongoSantize = require("express-mongo-sanitize");
 const WebSocket = require("ws");
+const compression = require("compression");
 
 const path = require("path");
 const http = require("http");
@@ -24,12 +25,12 @@ const app = express();
 app.set("trust proxy", 1);
 
 // rate limiting security middleware
-// const limiter = rateLimit({
-//   limit: 500,
-//   windowMs: 60 * 60 * 1000,
-// });
+const limiter = rateLimit({
+  limit: 2000,
+  windowMs: 60 * 60 * 1000,
+});
 
-// app.use(limiter);
+app.use(limiter);
 
 // global middlewares
 app.use(express.json());
@@ -38,6 +39,7 @@ app.use(cookieParser());
 
 // data sanitizing against nosql query injection (middleware)
 app.use(mongoSantize());
+app.use(compression());
 
 // router middleware
 app.use("/", viewRouter);
