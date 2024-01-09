@@ -11,7 +11,13 @@ dotenv.config({ path: "./config.env" });
 
 const startDB = async function () {
   try {
-    await mongoose.connect(process.env.LOCAL_DATABASE);
+    await mongoose.connect(process.env.LOCAL_DATABASE, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+      useCreateIndex: true,
+      serverSelectionTimeoutMS: 30000,
+    });
     console.log("started db");
   } catch (err) {
     console.log(err);
