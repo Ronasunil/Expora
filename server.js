@@ -1,6 +1,6 @@
 //const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-const webSocketHandler = require("wsManger.js");
+const webSocketHandler = require("./wsManger.js");
 
 process.on("uncaughtException", (err) => {
   console.log(err);
@@ -11,7 +11,7 @@ process.on("uncaughtException", (err) => {
 
 mongoose.connect(process.env.LOCAL_DATABASE);
 
-const app = require("app.js");
+const app = require("./app.js");
 
 const port = process.env.PORT || 3000;
 
