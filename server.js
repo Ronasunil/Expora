@@ -9,8 +9,6 @@ process.on("uncaughtException", (err) => {
 
 dotenv.config({ path: "./config.env" });
 
-mongoose.set("bufferCommands", false);
-
 const startDB = async function () {
   try {
     await mongoose.connect(process.env.LOCAL_DATABASE);
