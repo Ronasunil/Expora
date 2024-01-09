@@ -26,7 +26,7 @@ app.set("trust proxy", 1);
 
 // rate limiting security middleware
 const limiter = rateLimit({
-  limit: 2000,
+  limit: 3000,
   windowMs: 60 * 60 * 1000,
 });
 

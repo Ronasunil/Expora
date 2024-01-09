@@ -35,9 +35,9 @@ class Mailer {
   }
 
   createTransporter() {
-    if (process.env.NODE_ENV === "production") {
-      return 1;
-    }
+    // if (process.env.NODE_ENV === "production") {
+    //   return 1;
+    // }
 
     return nodeMailer.createTransport({
       host: process.env.MAIL_TRAP_HOST,
@@ -61,7 +61,6 @@ class Mailer {
   }
 
   async send(template, message) {
-    console.log(template);
     // converting pug to html
     const htmlMarkup = this.createHtml(template, message);
 
