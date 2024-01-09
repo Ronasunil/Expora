@@ -1,4 +1,4 @@
-// const dotenv = require("dotenv");
+const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const webSocketHandler = require("./wsManger.js");
 
@@ -7,7 +7,7 @@ process.on("uncaughtException", (err) => {
   process.exit(1);
 });
 
-// dotenv.config({ path: "./config.env" });
+dotenv.config({ path: "./config.env" });
 
 mongoose.connect(process.env.LOCAL_DATABASE);
 
