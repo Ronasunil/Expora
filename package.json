@@ -7,7 +7,7 @@
     "prod": "NODE_ENV=production nodemon server.js",
     "start": "node server.js",
     "start:dev": "NODE_ENV=development nodemon server.js",
-    "build:js": "parcel build ./public/js/index.js  --dist-dir ./public/js/dist ",
+    "build:js": "parcel build ./public/js/index.js  --dist-dir ./public/js/dist",
     "watch:js": "parcel watch ./public/js/index.js  --dist-dir ./public/js/dist"
   },
   "author": "Rona",
@@ -33,6 +33,7 @@
     "node-schedule": "^2.1.1",
     "nodemailer": "^6.9.7",
     "otp-generator": "^4.0.1",
+    "parcel": "^2.11.0",
     "pdfkit-table": "^0.1.99",
     "pug": "^3.0.2",
     "sharp": "^0.32.6",
@@ -52,7 +53,6 @@
     "https-browserify": "^1.0.0",
     "nodemon": "^3.0.1",
     "os-browserify": "^0.3.0",
-    "parcel": "^2.10.2",
     "path-browserify": "^1.0.1",
     "process": "^0.11.10",
     "punycode": "^1.4.1",
@@ -62,6 +62,19 @@
     "url": "^0.11.3",
     "util": "^0.12.5"
   },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+
+  },
+
   "engines": {
     "node": ">=10.0.0"
   }
