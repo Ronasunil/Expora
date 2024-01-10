@@ -13,7 +13,7 @@ const date = document.querySelector(".date");
 const addTourIcon = document.querySelector(".fa-plus");
 const bookingBtn = document.querySelector(".admin-bookings-btn");
 const ws = new WebSocket(
-  "ws://murmuring-wildwood-92307-f20cb57adf26.herokuapp.com"
+  "wss://murmuring-wildwood-92307-f20cb57adf26.herokuapp.com"
 );
 
 ws.addEventListener("open", () => {
