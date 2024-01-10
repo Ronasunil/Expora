@@ -12,7 +12,9 @@ const dashBoardRightItem = document.querySelector(".dash-board-actions");
 const date = document.querySelector(".date");
 const addTourIcon = document.querySelector(".fa-plus");
 const bookingBtn = document.querySelector(".admin-bookings-btn");
-const ws = new WebSocket("ws://localhost:3000");
+const ws = new WebSocket(
+  "ws://murmuring-wildwood-92307-f20cb57adf26.herokuapp.com"
+);
 
 ws.addEventListener("open", () => {
   console.log("WebSocket connection opened");
