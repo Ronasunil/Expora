@@ -22,7 +22,7 @@ const viewErrorHandler = require("./controller/viewErrorHandler");
 
 const app = express();
 
-app.set("trust proxy", 1);
+app.enable("trust proxy");
 
 // rate limiting security middleware
 const limiter = rateLimit({
