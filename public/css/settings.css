@@ -762,6 +762,10 @@ body{
 
 }
 
+.grouped-booking{
+    padding: 1rem 1rem;
+}
+
 .password{
     height: 2rem;
 

@@ -245,9 +245,10 @@ const dropdownAction = async function () {
 export const renderGroupedBookings = async function (tourId) {
   // clear everything
   itemsContainer.innerHTML = "";
+  itemsContainer.classList = "";
   dashBoardRightItem.innerHTML = "";
   dashboardHeading.textContent = "Bookings";
-  itemsContainer.innerHTML = "";
+  itemsContainer.classList.add("grouped-booking");
 
   try {
     // making req to get data
