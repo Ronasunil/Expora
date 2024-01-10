@@ -30,7 +30,7 @@ app.enable("trust proxy");
 //   windowMs: 60 * 60 * 1000,
 // });
 
-app.use(limiter);
+// app.use(limiter);
 
 // global middlewares
 app.use(express.json());
