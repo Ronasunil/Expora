@@ -21,8 +21,8 @@ exports.checkOut = catchAsync(async (req, res) => {
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
-    success_url: `/?tourId=${tour._id}&price=${tourPrice}&userId=${req.user._id}&bookingDate=${bookingDate}`,
-    cancel_url: "/",
+    success_url: `https://expora-75fa4c861fb7.herokuapp.com/?tourId=${tour._id}&price=${tourPrice}&userId=${req.user._id}&bookingDate=${bookingDate}`,
+    cancel_url: "https://expora-75fa4c861fb7.herokuapp.com/",
     customer_email: req.user.email,
     mode: "payment",
 
@@ -34,7 +34,7 @@ exports.checkOut = catchAsync(async (req, res) => {
           product_data: {
             name: tour.tourName,
             description: tour.description,
-            images: [`http://127.0.0.1:3000/img/tours/tour-3-1.jpg`],
+            images: [`/img/tours/tour-3-1.jpg`],
           },
         },
         quantity: 1,
