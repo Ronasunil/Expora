@@ -25,10 +25,10 @@ const app = express();
 app.enable("trust proxy");
 
 // rate limiting security middleware
-const limiter = rateLimit({
-  limit: 3000,
-  windowMs: 60 * 60 * 1000,
-});
+// const limiter = rateLimit({
+//   limit: 3000,
+//   windowMs: 60 * 60 * 1000,
+// });
 
 app.use(limiter);
 
