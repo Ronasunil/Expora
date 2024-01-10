@@ -26,7 +26,6 @@ const setCookie = function (res, req, token) {
     secure: true,
   };
 
-  console.log(cookieOpt);
   res.cookie("jwt", token, cookieOpt);
 };
 
