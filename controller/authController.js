@@ -19,13 +19,13 @@ const signToken = async function (payload) {
   });
 };
 
-const setCookie = function (res, token) {
+const setCookie = function (res, req, token) {
   const cookieOpt = {
     maxAge: process.env.COOKIE_EXPIRES * 24 * 60 * 60 * 1000,
     httpOnly: true,
+    secure: req.secure || req.headers("x-forwarded-proto") === "https",
   };
 
-  if (process.env.NODE_ENV === "production") cookieOpt.secure = true;
   console.log(cookieOpt);
   res.cookie("jwt", token, cookieOpt);
 };
@@ -110,7 +110,7 @@ exports.verifyOtp = catchAsync(async (req, res) => {
   const token = await signToken(user._id);
 
   // sending cookie
-  setCookie(res, token);
+  setCookie(res, req, token);
   res.status(200).json({
     status: "success",
     message: "Account created",
@@ -133,7 +133,7 @@ exports.login = catchAsync(async (req, res, next) => {
 
   const token = await signToken(user._id);
 
-  setCookie(res, token);
+  setCookie(res, req, token);
   res.status(200).json({
     status: "success",
     message: "Authenticated",
@@ -289,7 +289,7 @@ exports.resetPassword = catchAsync(async (req, res) => {
 
   // signing token
   const token = await signToken(user._id);
-  setCookie(res, token);
+  setCookie(res, req, token);
 
   res.status(200).json({
     status: "Success",
@@ -326,7 +326,7 @@ exports.updatePassword = catchAsync(async (req, res) => {
 
   // send jwt,
   const token = await signToken(user._id);
-  setCookie(res, token);
+  setCookie(res, req, token);
 
   res.status(200).json({
     status: "Success",
