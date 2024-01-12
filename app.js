@@ -7,7 +7,6 @@ const WebSocket = require("ws");
 const compression = require("compression");
 
 const path = require("path");
-const http = require("http");
 
 const tourRouter = require("./routes/tourRouter");
 const userRouter = require("./routes/userRoutes");
@@ -19,6 +18,7 @@ const couponRouter = require("./routes/couponRouter");
 
 const apiErrorHandler = require("./controller/errorHandler");
 const viewErrorHandler = require("./controller/viewErrorHandler");
+const bookingController = require("./controller/bookingController");
 
 const app = express();
 
@@ -32,9 +32,11 @@ app.enable("trust proxy");
 
 // app.use(limiter);
 
+// app.post("/webhook-checkout", express.raw(), bookingController.webhookCheckout);
+
 // global middlewares
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: "10kb" }));
+app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 app.use(cookieParser());
 
 // data sanitizing against nosql query injection (middleware)
