@@ -9,11 +9,11 @@ const catchAsync = require("./../utils/catchAsync");
 const User = require("./../model/userModel");
 const otpGenerator = require("./../utils/otp");
 const otpModel = require("./../model/otpModel");
-const sendEmail = require("./../utils/mailer");
 const AppError = require("./../utils/AppError");
 
 // siging token
 const signToken = async function (payload) {
+  console.log(process.env.SECRET);
   return await jwt.sign({ id: payload }, process.env.SECRET, {
     expiresIn: process.env.EXPIRESIN,
   });
