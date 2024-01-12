@@ -136,7 +136,8 @@ topToursBtn?.addEventListener("click", renderTopTours);
 
 allToursBtn?.addEventListener("click", renderAllTours);
 
-moreToursLink.addEventListener("click", () => {
+moreToursLink.addEventListener("click", (e) => {
+  e.preventDefault();
   localStorage.clear();
   location.assign("/tours");
 });
