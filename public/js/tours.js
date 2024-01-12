@@ -1,6 +1,5 @@
 const tourContainer = document.querySelector(".tour-cards");
 const heading = document.querySelector(".tertiary-heading");
-const selectOptions = document.querySelector(".options");
 
 let allTours;
 
@@ -96,7 +95,6 @@ export const renderTopTours = async function () {
 };
 
 export const renderAllTours = async function () {
-  console.log(selectOptions.value);
   const selectVal = getLocalStorage("selectValue");
   const url = selectVal ? `/api/v1/tours?${selectVal}` : `/api/v1/tours`;
   if (!tourContainer) return;
