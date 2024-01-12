@@ -1,5 +1,6 @@
 const tourContainer = document.querySelector(".tour-cards");
 const heading = document.querySelector(".tertiary-heading");
+const selectOptions = document.querySelector(".options");
 
 let allTours;
 
@@ -14,7 +15,7 @@ const getTours = async function () {
   return allTours;
 };
 
-const setLocalStorage = function (item) {
+const setLocalStorage = function (item, index) {
   localStorage.setItem("selectValue", JSON.stringify(item));
 };
 
@@ -43,7 +44,7 @@ const createMarkup = function (data) {
 };
 
 const renderTour = function (tours) {
-  console.log(tours, "kllklklklk");
+  console.log(tours);
   tourContainer.innerHTML = "";
   tours.forEach((tour) => {
     const html = createMarkup(tour);
@@ -95,6 +96,7 @@ export const renderTopTours = async function () {
 };
 
 export const renderAllTours = async function () {
+  console.log(selectOptions.value);
   const selectVal = getLocalStorage("selectValue");
   const url = selectVal ? `/api/v1/tours?${selectVal}` : `/api/v1/tours`;
   if (!tourContainer) return;

@@ -108,6 +108,7 @@ const couponsBtn = document.querySelector(".coupon-btn");
 const addCouponsBtn = document.querySelector(".add-coupon-btn");
 const notificationBtn = document.querySelector(".notification-btn");
 const profileBtn = document.querySelector(".user-profile-btn");
+const moreToursLink = document.querySelector(".more-tours");
 
 // map container
 const mapContainer = document.getElementById("map");
@@ -134,6 +135,11 @@ categoreyOptions?.addEventListener("change", categorizeTour);
 topToursBtn?.addEventListener("click", renderTopTours);
 
 allToursBtn?.addEventListener("click", renderAllTours);
+
+moreToursLink.addEventListener("click", () => {
+  localStorage.clear();
+  location.assign("/tours");
+});
 
 resendOtpLink?.addEventListener("click", resendOtp);
 
