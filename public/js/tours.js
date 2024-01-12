@@ -43,9 +43,10 @@ const createMarkup = function (data) {
 };
 
 const renderTour = function (tours) {
+  console.log(tours, "kllklklklk");
+  tourContainer.innerHTML = "";
   tours.forEach((tour) => {
     const html = createMarkup(tour);
-    tourContainer.innerHTML = "";
     tourContainer.insertAdjacentHTML("beforeend", html);
   });
 };
@@ -78,7 +79,7 @@ export const categorizeTour = async function (e) {
   const tours = response.data.tours;
 
   if (tours.length === 0) return (heading.textContent = "No tour found");
-  console.log(tours);
+
   renderTour(tours);
 };
 
