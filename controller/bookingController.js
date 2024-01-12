@@ -21,8 +21,8 @@ exports.checkOut = catchAsync(async (req, res) => {
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
-    success_url: `https://expora-75fa4c861fb7.herokuapp.com/?tourId=${tour._id}&price=${tourPrice}&userId=${req.user._id}&bookingDate=${bookingDate}`,
-    cancel_url: "https://expora-75fa4c861fb7.herokuapp.com/",
+    success_url: `/?tourId=${tour._id}&price=${tourPrice}&userId=${req.user._id}&bookingDate=${bookingDate}`,
+    cancel_url: "/",
     customer_email: req.user.email,
     mode: "payment",
 
@@ -78,16 +78,16 @@ exports.addBooking = catchAsync(async (req, res, next) => {
     tourBookingDate: bookingDate,
   });
 
-  // adding id to booked tour in user for reference
-  const status = await Booking.findOne({ user: userId, status: "confirmed" });
+  // // adding id to booked tour in user for reference
+  // const status = await Booking.findOne({ user: userId, status: "confirmed" });
 
-  if (status) {
-    await User.updateOne(
-      { _id: userId },
-      { $addToSet: { idOfBookedTour: tourId } },
-      { new: true, runValidators: true }
-    );
-  }
+  // if (status) {
+  //   await User.updateOne(
+  //     { _id: userId },
+  //     { $addToSet: { idOfBookedTour: tourId } },
+  //     { new: true, runValidators: true }
+  //   );
+  // }
 
   next();
 
