@@ -36,7 +36,9 @@ exports.checkOut = catchAsync(async (req, res) => {
           product_data: {
             name: tour.tourName,
             description: tour.description,
-            images: [`/img/tours/tour-3-1.jpg`],
+            images: [
+              `https://expora-75fa4c861fb7.herokuapp.com/img/tours/${tour.coverImg}`,
+            ],
           },
         },
         quantity: 1,
