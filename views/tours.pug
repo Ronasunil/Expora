@@ -43,49 +43,50 @@ block content
             option(value='catagory=Budget tour') Budget tour
           input.search-bar(type='search')
       section.tours
-        //- .catogrizing-opt
-        //-     .budget-box 
-        //-       p.catagorey-text Budget
-        //-         .budget.budget-1 
-        //-             input.checkbox-default(type="checkbox") 
-        //-             p.budget-range below $1200
-        //-         .budget.budget-1 
-        //-             input.checkbox-default(type="checkbox") 
-        //-             p.budget-range below $1500   
-        //-         .budget.budget-1 
-        //-             input.checkbox-default(type="checkbox") 
-        //-             p.budget-range below $1700    
-        //-         .budget.budget-1 
-        //-             input.checkbox-default(type="checkbox") 
-        //-             p.budget-range below $2000      
-        //-     .budget-box 
-        //-       p.catagorey-text Budget
-        //-         .budget.budget-1 
-        //-             input.checkbox-default(type="checkbox") 
-        //-             p.budget-range below $1200
-        //-         .budget.budget-1 
-        //-             input.checkbox-default(type="checkbox") 
-        //-             p.budget-range below $1500   
-        //-         .budget.budget-1 
-        //-             input.checkbox-default(type="checkbox") 
-        //-             p.budget-range below $1700    
-        //-         .budget.budget-1 
-        //-             input.checkbox-default(type="checkbox") 
-        //-             p.budget-range below $2000     
-        //-     .budget-box 
-        //-       p.catagorey-text Budget
-        //-         .budget.budget-1 
-        //-             input.checkbox-default(type="checkbox") 
-        //-             p.budget-range below $1200
-        //-         .budget.budget-1 
-        //-             input.checkbox-default(type="checkbox") 
-        //-             p.budget-range below $1500   
-        //-         .budget.budget-1 
-        //-             input.checkbox-default(type="checkbox") 
-        //-             p.budget-range below $1700    
-        //-         .budget.budget-1 
-        //-             input.checkbox-default(type="checkbox") 
-        //-             p.budget-range below $2000                                                                                         
+        .catogrizing-opt
+            .budget-box 
+              p.catagorey-text Budget
+                .budget.budget-1 
+                    input.checkbox-default(type="checkbox" value="price[lt]=1200") 
+                    p.budget-range below $1200
+                .budget.budget-1 
+                    input.checkbox-default(type="checkbox" value="price[lt]=1500") 
+                    p.budget-range below $1500   
+                .budget.budget-1 
+                    input.checkbox-default(type="checkbox" value="price[lt]=1700") 
+                    p.budget-range below $1700    
+                .budget.budget-1 
+                    input.checkbox-default(type="checkbox" value="price[lt]=2000") 
+                    p.budget-range below $2000      
+            .budget-box 
+              p.catagorey-text Duration
+                .budget.budget-1 
+                    input.checkbox-default(type="checkbox" value="duration=2 days") 
+                    p.budget-range 2 Days
+                .budget.budget-1 
+                    input.checkbox-default(type="checkbox" value="duration=3 days") 
+                    p.budget-range 3 Days   
+                .budget.budget-1 
+                    input.checkbox-default(type="checkbox" value="duration=4 days") 
+                    p.budget-range 4 Days    
+                .budget.budget-1 
+                    input.checkbox-default(type="checkbox" value="duration=5 days") 
+                    p.budget-range 5 Days     
+                .budget.budget-1 
+                    input.checkbox-default(type="checkbox" value="duration=6 days") 
+                    p.budget-range 6 Days     
+                .budget.budget-1 
+                    input.checkbox-default(type="checkbox" value="duration=7 days") 
+                    p.budget-range 7 Days                                             
+            .budget-box 
+              p.catagorey-text Category
+                .budget.budget-1 
+                    input.checkbox-default(type="checkbox" value="catagory=adventure") 
+                    p.budget-range Adventure
+                .budget.budget-1 
+                    input.checkbox-default(type="checkbox" value="catagory=romantic") 
+                    p.budget-range Romantic
+                                                                             
         .all-tours
           p.section-phrase TOURS
           h3.tertiary-heading Explore all the tours

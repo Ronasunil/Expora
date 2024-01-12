@@ -7,6 +7,7 @@ import {
   categorizeTour,
   renderTopTours,
   renderAllTours,
+  renderFilterTour,
 } from "./tours";
 
 import {
@@ -109,6 +110,7 @@ const addCouponsBtn = document.querySelector(".add-coupon-btn");
 const notificationBtn = document.querySelector(".notification-btn");
 const profileBtn = document.querySelector(".user-profile-btn");
 const moreToursLink = document.querySelector(".more-tours");
+const catgorizeOptionContainer = document.querySelector(".catogrizing-opt");
 
 // map container
 const mapContainer = document.getElementById("map");
@@ -429,3 +431,7 @@ couponsBtn?.addEventListener("click", renderCoupons);
 
 // adding new coupon btn
 addCouponsBtn?.addEventListener("click", addCoupon);
+
+catgorizeOptionContainer.addEventListener("click", renderFilterTour);
+
+console.log(catgorizeOptionContainer);

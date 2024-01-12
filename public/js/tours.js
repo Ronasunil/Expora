@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const tourContainer = document.querySelector(".tour-cards");
 const heading = document.querySelector(".tertiary-heading");
 
@@ -43,7 +45,6 @@ const createMarkup = function (data) {
 };
 
 const renderTour = function (tours) {
-  console.log(tours);
   tourContainer.innerHTML = "";
   tours.forEach((tour) => {
     const html = createMarkup(tour);
@@ -104,6 +105,33 @@ export const renderAllTours = async function () {
 
   const tours = response.data.tours;
   if (tours.length === 0) return (heading.textContent = "No tour found");
+  renderTour(tours);
+};
+
+export const renderFilterTour = async function (e) {
+  // Elements
+  const isEl = e.target.classList.contains("checkbox-default");
+  const checkBoxes = document.querySelectorAll(".checkbox-default");
+
+  if (!isEl) return;
+
+  //current checkbox
+  const el = e.target;
+
+  // clearing all other checkbox
+  checkBoxes.forEach((item) => {
+    if (el !== item) item.checked = false;
+  });
+
+  // sending req to database
+  const res = await axios({
+    method: "GET",
+    url: `api/v1/tours?${el.value}`,
+  });
+
+  const { tours } = res.data.data;
+
+  // rendering filtered tours
   renderTour(tours);
 };
 

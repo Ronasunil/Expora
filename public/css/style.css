@@ -680,10 +680,10 @@ body{
 }
 
 .tours{
-  /* display: grid;
-  grid-template-columns: 1fr 5fr;
-  grid-template-columns: 1fr;
-  gap: 2rem; */
+  display: grid;
+  grid-template-columns: 1.2fr 5fr;
+  /* grid-template-columns: 1fr; */
+  gap: 2rem;
   padding: 1rem 2rem;
 }
 
