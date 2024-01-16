@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 const itemsContainer = document.querySelector(".dash-board-commodity");
 const date = document.querySelector(".date");
 const dashboardHeading = document.querySelector(".dashboard-heading");
+const dashboardActions = document.querySelector(".dash-board-actions");
 const now = new Date();
 
 let isChanged = false;
@@ -54,9 +55,12 @@ const getUserDetails = async function () {
 export const renderProfile = async function () {
   //   clearing everything
   itemsContainer.innerHTML = "";
+  dashboardActions.innerHTML = "";
   date.textContent = `${now.getDate()}/${
     now.getMonth() + 1
   }/${now.getFullYear()}`;
+  itemsContainer.classList = "";
+  itemsContainer.classList.add("dash-board-commodity");
   dashboardHeading.textContent = "Profile";
 
   //   getting current logged in user

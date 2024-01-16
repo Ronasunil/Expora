@@ -22,8 +22,14 @@ const couponSchema = new mongoose.Schema({
     min: 1,
     max: 50,
   },
+
+  expiryDate: {
+    type: Date,
+    required: [true, "Coupon must have a expiry date"],
+  },
 });
 
 const Coupon = mongoose.model("Coupon", couponSchema);
+couponSchema.index({ expiryDate: 1 }, { expireAfterSeconds: 0 });
 
 module.exports = Coupon;

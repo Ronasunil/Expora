@@ -8,10 +8,13 @@ block content
       form.coupon-form
         .row
           label(for='coupon-code') Coupon code
-          input.coupon-code-input(type='text' name='couponCode' required='' minlength='4' maxlength='6' title="Coupon code length must be between 4 and 6 characters")
+          input.coupon-code-input(type='text'  required='' minlength='4' maxlength='6' title="Coupon code length must be between 4 and 6 characters")
         .row
           label(for='discount-percentage') Discount percentage
-          input.discount-input(type='number'  name='discount' max="50" required='' title="Discount should be less than 50%")
+          input.discount-input(type='number'   max="50" required='' title="Discount should be less than 50%")
+        .row
+          label(for='discount-percentage') Expiration Date
+          input.expiry-date-input(type='date'   required='' title="Expiry date is required")  
         button.add-coupon-btn(type='submit') Submit
         .message-container
           h3.error-msg Don&apos;t Hesitate

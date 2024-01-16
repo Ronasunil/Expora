@@ -116,7 +116,10 @@ exports.update = catchAsync(async (req, res) => {
   //   updatedUser = await User.updateUser(req.body, req.user.id);
   // }
 
-  res.status(204);
+  res.status(200).json({
+    status: "Success",
+    message: "Updated successfully",
+  });
 });
 
 // updating user wallet

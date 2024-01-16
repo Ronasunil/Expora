@@ -5,6 +5,7 @@ import { renderCoupons } from "./profile";
 
 const inputCouponCode = document.querySelector(".coupon-code-input");
 const inputDiscount = document.querySelector(".discount-input");
+const inputExpiry = document.querySelector(".expiry-date-input");
 const form = document.querySelector(".coupon-form");
 const errorBox = document.querySelector(".message-container");
 const errorMessage = document.querySelector(".error-msg");
@@ -20,6 +21,7 @@ export const addCoupon = async function (e) {
       data: {
         couponCode: inputCouponCode.value,
         discountPercentage: inputDiscount.value,
+        expiryDate: inputExpiry.value,
       },
     });
 
@@ -45,6 +47,7 @@ export const editCoupon = async function (coupon) {
         couponCode: coupon.coupon.id,
         isValid: coupon.tokenValidity,
         discountPercentage: coupon.discountPercentage,
+        expiryDate: coupon.expiryDate,
       },
     });
     message = res.data.message;

@@ -123,7 +123,7 @@ export const renderNotificationMenu = function () {
   itemsContainer.innerHTML = "";
   dashBoardRightItem.innerHTML = "";
   itemsContainer.classList = "";
-  itemsContainer.classList.add("dash-board-commodity-feedback");
+  itemsContainer.classList.add("dash-board-commodity");
   const markup = generateNotificationMarkup();
 
   itemsContainer.insertAdjacentHTML("beforeend", markup);
@@ -567,6 +567,8 @@ export const renderCouponEditPopup = async function (e, fn) {
       }  style="margin-top: 0;" placeholder="Enter Valid" required title="value must be yes or no">` +
       '<label for="discount">Discount</label>' +
       `<input id="discount" class="swal2-input input-coupon-discount" value=${coupon.discountPercentage} style="margin-top: 0;" placeholder="Enter Discount" required>` +
+      '<label for="discount">Expiry date</label>' +
+      `<input id="discount" class="swal2-input input-expiartion" value=${coupon.expiryDate} style="margin-top: 0;" placeholder="Enter Discount" required>` +
       "</div>" +
       "</form>",
 
@@ -574,6 +576,7 @@ export const renderCouponEditPopup = async function (e, fn) {
       const form = document.querySelector(".edit-coupon-form");
       const coupon = document.querySelector(".input-coupon-code").value;
       const discount = document.querySelector(".input-coupon-discount").value;
+      const expiryDate = document.querySelector(".input-expiartion").value;
       let tokenValidity = document.querySelector(".input-coupon-valid").value;
 
       if (
@@ -588,7 +591,7 @@ export const renderCouponEditPopup = async function (e, fn) {
       tokenValidity =
         tokenValidity.trim().toLowerCase() === "yes" ? true : false;
 
-      fn({ coupon, discount, tokenValidity, couponId: couponId });
+      fn({ coupon, discount, tokenValidity, couponId: couponId, expiryDate });
     },
   });
 };

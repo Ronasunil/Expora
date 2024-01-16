@@ -145,21 +145,26 @@ export const renderWallet = async function () {
     url: "/api/v1/users/wallet",
   });
 
-  const { userWallet } = res.data.data;
+  let { userWallet } = res.data.data;
   console.log(res.data.data);
   // render the top bar heading
   renderWalletBar();
 
+  userWallet = Object.values(userWallet);
+  console.log(Object.values(userWallet), userWallet);
+
   // render the items in wallet
-  userWallet[0].forEach((tour) => {
+  userWallet.forEach((data) => {
+    console.log(tour);
+    const tour = data[0];
     const Walletmarkup = generateWalletMarkup(tour);
     itemsContainer.insertAdjacentHTML("beforeend", Walletmarkup);
   });
 
-  const total = userWallet[0].reduce(
-    (acc, booking) => Math.round(acc + booking.price),
-    0
-  );
+  const total = userWallet.reduce((acc, booking) => {
+    console.log(booking[0].price);
+    return Math.round(acc + booking[0].price);
+  }, 0);
 
   console.log(total);
 

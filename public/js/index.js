@@ -261,7 +261,7 @@ itemsContainer?.addEventListener("click", async function (e) {
   // Dom traversing for updating profile or save btn
 
   if (e.target.classList.contains("profile-form-btn")) {
-    updateProfileDetails(e);
+    await updateProfileDetails(e);
   }
 });
 

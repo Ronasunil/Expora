@@ -46,6 +46,8 @@ const bookingSchema = new mongoose.Schema(
     peopleCount: {
       type: Number,
       required: [true, "Booking must need people count"],
+      max: [10, "Maximum people can be included in the tour is 10"],
+      min: [1, "Atleast one membet needed to book tour"],
     },
 
     discountPrice: {
