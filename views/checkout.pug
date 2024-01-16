@@ -20,7 +20,7 @@ head
       h2= tour.tourName
       .product-details
         .price-info
-          p.product-price-label Price: $#{tour.price} 
+          p.product-price-label Price: $#{tour.price * Number.parseInt(size)} 
 
         h4.product-description= tour.description 
     .rightside
@@ -43,7 +43,7 @@ head
           p.expcvv_text2 CVV
           input#cvv.inputbox(type='password' name='cvv' required='')
         p
-        button.checkout-btn.button.w-100(type='submit' data-tour-id=`${tour._id}` data-booking-date=`${bookingDate}`) CheckOut
+        button.checkout-btn.button.w-100(type='submit' data-tour-id=`${tour._id}` data-booking-date=`${bookingDate}` data-people-count=`${size}`) CheckOut
 
 script(src="https://js.stripe.com/v3/") 
 script(src="/js/dist/index.js") 

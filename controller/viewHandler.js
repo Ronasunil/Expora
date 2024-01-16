@@ -105,18 +105,19 @@ exports.renderResetPassword = catchAsync(async (req, res) => {
 exports.renderBookingDetailPage = catchAsync(async (req, res) => {
   const { bookingId } = req.params;
   const booking = await Booking.findById(bookingId)
-    .populate({ path: "user", select: "name" })
-    .populate({ path: "tour", select: "tourName price" });
+    .populate({ path: "user", select: "name email" })
+    .populate({ path: "tour", select: "tourName price slug" });
 
   res.render("booking-detail", { booking });
 });
 
 exports.renderCheckout = catchAsync(async (req, res) => {
   const { tourSlug } = req.params;
-  const { bookingDate } = req.query;
-  console.log(bookingDate);
+  const { bookingDate, size } = req.query;
+
   const tour = await Tour.findOne({ slug: tourSlug });
-  res.render("checkout", { tour, bookingDate });
+
+  res.render("checkout", { tour, bookingDate, size });
 });
 
 exports.renderCreateCoupon = (req, res) => {

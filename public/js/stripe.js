@@ -4,12 +4,12 @@ const stripe = Stripe(
   "pk_test_51OH5rqSI832q4lmFwL6nM3XNMLJE4tWqXvV8p9kKQA5A7WZ61EJIGEVEwPS6b5Df50NvyLE6h7MnD2bUjZN6cmq700WUDnvWwE"
 );
 
-export const bookTour = async function (tourId, bookingDate) {
+export const bookTour = async function (tourId, bookingDate, peopleCount) {
   try {
     const res = await axios({
       method: "POST",
       url: `/api/v1/bookings/checkout/${tourId}`,
-      data: { bookingDate: new Date(bookingDate) },
+      data: { bookingDate: new Date(bookingDate), peopleCount },
     });
     const id = res.data.data.id;
 

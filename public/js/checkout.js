@@ -38,8 +38,8 @@ export const checkout = function (fn) {
   return function (e) {
     if (form.checkValidity()) {
       e.preventDefault();
-      const { tourId, bookingDate } = this.dataset;
-      fn(tourId, bookingDate);
+      const { tourId, bookingDate, peopleCount } = this.dataset;
+      fn(tourId, bookingDate, peopleCount);
     }
   };
 };

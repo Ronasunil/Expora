@@ -1214,3 +1214,14 @@ body{
   color: #325622;
 }
 
+
+.input-max-people{
+    width: 40%;
+    height: 6vh;
+    padding: 1rem -1rem;
+    padding-left: 0.3rem;
+    font-size: 1rem;
+    border-radius: 9px;
+    outline: none;
+    border: 1px solid #aaa;
+}

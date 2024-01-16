@@ -43,6 +43,11 @@ const bookingSchema = new mongoose.Schema(
       lowercase: true,
     },
 
+    peopleCount: {
+      type: Number,
+      required: [true, "Booking must need people count"],
+    },
+
     discountPrice: {
       type: Number,
     },

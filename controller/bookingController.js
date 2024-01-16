@@ -13,17 +13,20 @@ const AppError = require("../utils/AppError");
 
 exports.checkOut = catchAsync(async (req, res) => {
   const { tourId } = req.params;
-  const { bookingDate } = req.body;
+  const { bookingDate, peopleCount } = req.body;
 
   // const get tour
   const tour = await Tour.findById(tourId);
-  const tourPrice = tour.finalPrice || tour.price;
+  let tourPrice = tour.finalPrice || tour.price;
+  tourPrice = tourPrice * Number.parseInt(peopleCount);
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
     success_url: `${req.protocol}://${req.get("host")}?tourId=${
       tour._id
-    }&price=${tourPrice}&userId=${req.user._id}&bookingDate=${bookingDate}`,
+    }&price=${tourPrice}&userId=${
+      req.user._id
+    }&bookingDate=${bookingDate}&peopleCount=${peopleCount}`,
     cancel_url: `${req.protocol}://${req.get("host")}/`,
     customer_email: req.user.email,
     mode: "payment",
@@ -37,7 +40,7 @@ exports.checkOut = catchAsync(async (req, res) => {
             name: tour.tourName,
             description: tour.description,
             images: [
-              `https://expora-75fa4c861fb7.herokuapp.com/img/tours/${tour.coverImg}`,
+              `https://expora-75fa4c861fb7.herokuapp.com${tour.coverImg}`,
             ],
           },
         },
@@ -60,7 +63,7 @@ exports.checkOut = catchAsync(async (req, res) => {
 });
 
 exports.addBooking = catchAsync(async (req, res, next) => {
-  const { price, tourId, userId, bookingDate } = req.query;
+  const { price, tourId, userId, bookingDate, peopleCount } = req.query;
 
   // check if  price tour id and user id exists
   if (!price && !tourId && !userId) return next();
@@ -80,6 +83,7 @@ exports.addBooking = catchAsync(async (req, res, next) => {
     user: userId,
     price: price,
     tourBookingDate: bookingDate,
+    peopleCount,
   });
 
   // // adding id to booked tour in user for reference

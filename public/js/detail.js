@@ -198,10 +198,35 @@ export const slideToRight = function () {
   goToSlide(currentSlide);
 };
 
+const validatePeople = function (input) {
+  const maxLength = 10;
+  const minLength = 1;
+  const value = Number.parseInt(input);
+  const errLabel = document.querySelector(".people-err-label");
+
+  console.log(input);
+
+  if (value < minLength || value > maxLength) {
+    errLabel.textContent =
+      "Value should be greater than 0 and less than or equal to 10";
+    return false;
+  }
+
+  errLabel.textContent = "";
+  return true;
+};
+
 export const displayChekout = function (e) {
   const { tourId, tourSlug, bookingDate } = e.target.dataset;
+  const peopleCount = document.getElementById("numberOfPeople").value;
+  console.log(peopleCount);
+  const isValid = validatePeople(peopleCount);
 
-  routeChanger(`/checkout/${tourSlug}?bookingDate=${bookingDate}`);
+  if (!isValid) return;
+
+  routeChanger(
+    `/checkout/${tourSlug}?bookingDate=${bookingDate}&size=${peopleCount}`
+  );
 };
 
 export const renderBookingDates = async function () {
@@ -211,7 +236,11 @@ export const renderBookingDates = async function () {
     url: `/api/v1/tours/${tourId}/avialable-bookings`,
   });
 
-  const { bookingTourDates } = res.data.data;
+  let { bookingTourDates } = res.data.data;
+
+  bookingTourDates = bookingTourDates.filter(
+    (booking) => new Date(booking) > Date.now()
+  );
 
   const bookingMarkup = `<div style="display: flex; flex-direction: column;">
   ${bookingTourDates
@@ -229,8 +258,15 @@ export const renderBookingDates = async function () {
   `
     )
     .join("")}
-</div>
-`;
+  
+  <div style="display: flex; justify-content: center; align-items: center; padding: 10px; border-bottom: 1px solid #ddd;">
+    <div>
+      <h3>Number of People:</h3>
+      <input  type="number" min="1" max="10" id="numberOfPeople" class="input-max-people"  value="1" placeholder="size" />
+      <p style=" color: red"; font-size: "15px"; " class="people-err-label"><p/>
+    </div>
+  </div>
+</div>`;
 
   const htmlContent =
     bookingTourDates.length === 0
@@ -240,6 +276,8 @@ export const renderBookingDates = async function () {
   Swal.fire({
     title: "Bookings",
     html: htmlContent,
+    showCancelButton: false,
+    showConfirmButton: false,
     preConfirm: () => {},
   });
 };
