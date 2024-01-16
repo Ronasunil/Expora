@@ -288,7 +288,8 @@ export const renderAnalytics = async function () {
 
   // rendering dropdown for monthly and year wise result
   renderDropDown();
-  await renderGraph(2023);
+  const year = new Date(Date.now()).getFullYear();
+  await renderGraph(year);
 
   // adding eventListner to dropdown
   document
