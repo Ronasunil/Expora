@@ -240,7 +240,7 @@ exports.getStats = catchAsync(async (req, res) => {
         monthNum: { $month: "$createdAt" },
         month: {
           $dateToString: {
-            format: "%B",
+            format: "%m-%Y",
             date: "$createdAt",
           },
         },
