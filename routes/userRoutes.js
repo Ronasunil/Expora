@@ -58,17 +58,22 @@ router
   .post(authController.protect, userController.sendFeedback);
 
 //memories route
-router
-  .route("/memories")
-  .patch(
-    authController.protect,
-    userController.uploadPhoto,
-    userController.addMemories
-  );
 
 router
   .route("/memories")
-  .get(authController.protect, userController.getMemories);
+  .get(authController.protect, userController.getMemories)
+  .patch(
+    authController.protect,
+    userController.uploadPhoto,
+    userController.resizeImage,
+    userController.addMemories
+  );
+
+// updating user wallet getiing user wallet
+router
+  .route("/wallet")
+  .get(authController.protect, userController.getUserWallet)
+  .patch(authController.protect, userController.updateWallet);
 
 //  admin routes
 

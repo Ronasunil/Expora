@@ -2,9 +2,25 @@ import axios from "axios";
 
 const tourContainer = document.querySelector(".tour-cards");
 const heading = document.querySelector(".tertiary-heading");
+const pageCount = document.querySelector(".page-number");
+const iconRight = document.querySelector(".icon-right");
+const iconLeft = document.querySelector(".icon-left");
+let page = 1;
+let skip = 7;
 
-let allTours;
+let allTours, currentTour;
 
+const resetPagination = function (tours) {
+  page = 1;
+  pageCount.textContent = page;
+
+  iconLeft.classList.add("hide");
+  iconRight.classList.add("hide");
+
+  if (tours.length > 7) iconRight.classList.remove("hide");
+  if (page > 1) iconLeft.classList.remove("hide");
+  console.log(page, page > 1);
+};
 const getTours = async function () {
   if (allTours) return allTours;
 
@@ -46,7 +62,10 @@ const createMarkup = function (data) {
 
 const renderTour = function (tours) {
   tourContainer.innerHTML = "";
-  tours.forEach((tour) => {
+  const cloneTours = tours.slice(skip * page - skip, skip * page);
+  console.log(cloneTours.length);
+  if (cloneTours.length !== skip) iconRight.classList.add("hide");
+  cloneTours.forEach((tour) => {
     const html = createMarkup(tour);
     tourContainer.insertAdjacentHTML("beforeend", html);
   });
@@ -65,6 +84,10 @@ export const searchTours = async function (e) {
   if (searchedTour.length === 0) return (heading.textContent = "No tour found");
 
   heading.textContent = "Explore all the tours";
+  currentTour = searchedTour;
+
+  resetPagination(searchedTour);
+
   renderTour(searchedTour);
 };
 
@@ -77,9 +100,12 @@ export const categorizeTour = async function (e) {
   const response = await (
     await fetch(`api/v1/tours?${selectedOption.value}`)
   ).json();
-  const tours = response.data.tours;
+  const { tours } = response.data;
 
   if (tours.length === 0) return (heading.textContent = "No tour found");
+  currentTour = tours;
+
+  resetPagination(tours);
 
   renderTour(tours);
 };
@@ -92,6 +118,8 @@ export const renderTopTours = async function () {
 
   const tours = response.data.tours;
   if (tours.length === 0) return (heading.textContent = "No tour found");
+  currentTour = tours;
+  resetPagination(tours);
   renderTour(tours);
 };
 
@@ -105,6 +133,10 @@ export const renderAllTours = async function () {
 
   const tours = response.data.tours;
   if (tours.length === 0) return (heading.textContent = "No tour found");
+  currentTour = tours;
+
+  resetPagination(tours);
+
   renderTour(tours);
 };
 
@@ -130,9 +162,27 @@ export const renderFilterTour = async function (e) {
   });
 
   const { tours } = res.data.data;
+  currentTour = tours;
+
+  resetPagination(tours);
 
   // rendering filtered tours
   renderTour(tours);
 };
 
 renderAllTours();
+
+export const paginateRight = function () {
+  page++;
+  console.log(page);
+  pageCount.textContent = page;
+  if (page > 1) iconLeft.classList.remove("hide");
+  renderTour(currentTour);
+};
+export const paginateLeft = function () {
+  page--;
+  pageCount.textContent = page;
+  iconRight.classList.remove("hide");
+  if (page <= 1) iconLeft.classList.add("hide");
+  renderTour(currentTour);
+};

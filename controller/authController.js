@@ -341,3 +341,25 @@ exports.logout = (req, res) => {
   });
   res.redirect("/");
 };
+
+// preventing caching
+exports.preventAuth = catchAsync(async (req, res, next) => {
+  // Prevent caching
+  res.header(
+    "Cache-Control",
+    "no-cache, private, no-store, must-revalidate, max-age=0"
+  );
+  res.header("Pragma", "no-cache");
+  res.header("Expires", "0");
+  res.header("Vary", "User-Agent");
+
+  const token = req.cookies.jwt;
+  if (!token) return next();
+
+  const decoded = await promisify(jwt.verify)(token, process.env.SECRET);
+  if (!decoded) return next();
+
+  console.log(token);
+
+  res.redirect("/");
+});

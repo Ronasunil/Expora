@@ -8,6 +8,8 @@ import {
   renderTopTours,
   renderAllTours,
   renderFilterTour,
+  paginateLeft,
+  paginateRight,
 } from "./tours";
 
 import {
@@ -53,6 +55,7 @@ import {
   resetPassword,
   renderBookmarks,
   renderCancellationWindow,
+  renderWallet,
 } from "./userProfile";
 
 import { renderAllMarkers } from "./map";
@@ -111,6 +114,9 @@ const notificationBtn = document.querySelector(".notification-btn");
 const profileBtn = document.querySelector(".user-profile-btn");
 const moreToursLink = document.querySelector(".more-tours");
 const catgorizeOptionContainer = document.querySelector(".catogrizing-opt");
+const iconRight = document.querySelector(".icon-right");
+const iconLeft = document.querySelector(".icon-left");
+const walletBtn = document.querySelector(".wallet-btn");
 
 // map container
 const mapContainer = document.getElementById("map");
@@ -377,6 +383,7 @@ memoriesBtn?.addEventListener("click", renderMemories);
 
 // memories submit btn
 memoriesSubmitBtn?.addEventListener("click", addMemories);
+console.log(memoriesBtn);
 
 // reset password submit btn
 resetPasswordSubmitBtn?.addEventListener("click", updatePassword);
@@ -432,6 +439,14 @@ couponsBtn?.addEventListener("click", renderCoupons);
 // adding new coupon btn
 addCouponsBtn?.addEventListener("click", addCoupon);
 
-catgorizeOptionContainer.addEventListener("click", renderFilterTour);
+// for advanced catogrizing
+catgorizeOptionContainer?.addEventListener("click", renderFilterTour);
 
-console.log(catgorizeOptionContainer);
+// left key for  pagination
+iconLeft?.addEventListener("click", paginateLeft);
+
+// right key for  pagination
+iconRight?.addEventListener("click", paginateRight);
+
+// wallet btn
+walletBtn?.addEventListener("click", renderWallet);

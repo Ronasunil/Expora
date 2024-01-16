@@ -40,6 +40,43 @@ const generateTourMarkup = function (data, bookingId = null) {
            </div>`;
 };
 
+// creating wallet markup
+const generateWalletMarkup = function (booking) {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const bookingMonth = months[new Date(booking.createdAt).getMonth()];
+  console.log(booking);
+  return `<div class="tour">
+            <img class="booking-tour-img" src=${booking.tour.coverImg} alt="Tour image" />
+            <p class="booking-tour-date">${bookingMonth}</p>
+            <p class="booking-tour-price">${booking.tour.price}</p>
+            <a class="more-btn" id="light-green" href="/tour/${booking.tour.slug}">Info</a> 
+          </div>`;
+};
+
+const renderWalletBar = function () {
+  const markup = `<div class="booking-heading">
+                    <p class="boooking-tour-name">Tour </p>
+                    <p class="boooking-Date">Date </p>
+                    <p class="booking-user-name">Customer </p>
+                    <p class="booking-price">Price</p>
+                  </div>`;
+  itemsContainer.insertAdjacentHTML("beforeend", markup);
+};
+
 // creating memories markup
 const generateMemoriesMarkup = function (data) {
   const date = new Date(data.date).toLocaleDateString();
@@ -93,6 +130,40 @@ export const renderBookings = async function () {
   } catch (err) {
     console.log(err);
   }
+};
+
+// rendering wallet page
+export const renderWallet = async function () {
+  itemsContainer.innerHTML = "";
+  itemsContainer.classList = "";
+  itemsContainer.classList.add("grouped-booking");
+  dashboardHeading.textContent = "wallet";
+
+  // get wallet of user
+  const res = await axios({
+    method: "GET",
+    url: "/api/v1/users/wallet",
+  });
+
+  const { userWallet } = res.data.data;
+  console.log(res.data.data);
+  // render the top bar heading
+  renderWalletBar();
+
+  // render the items in wallet
+  userWallet[0].forEach((tour) => {
+    const Walletmarkup = generateWalletMarkup(tour);
+    itemsContainer.insertAdjacentHTML("beforeend", Walletmarkup);
+  });
+
+  const total = userWallet[0].reduce(
+    (acc, booking) => Math.round(acc + booking.price),
+    0
+  );
+
+  console.log(total);
+
+  dashboardActions.innerHTML = `<h3>Total:${total}</h3>`;
 };
 
 // rendering feedback page
@@ -200,7 +271,6 @@ export const renderCancellationWindow = function (fn, bookingId) {
         return Swal.showValidationMessage("Please select any of those");
 
       fn(bookingId);
-      location.reload();
     },
   });
 };
@@ -237,6 +307,8 @@ export const renderMemories = async function () {
 export const renderBookmarks = catchAsync(async function () {
   itemsContainer.innerHTML = "";
   dashboardHeading.textContent = "Bookmarks";
+  itemsContainer.classList = "";
+  itemsContainer.classList.add("dash-board-commodity");
   dashboardActions.innerHTML = "";
   const user = await getCurrentUser();
   try {

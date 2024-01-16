@@ -51,6 +51,7 @@ const addMarker = async function (locationValue) {
 };
 
 const showError = function (err) {
+  console.log(err);
   err.forEach((err) => {
     if (err.path === "photo") errImgLabel.textContent = err.message;
     if (err.path === "location") errorLocationLabel.textContent = err.message;
@@ -84,7 +85,10 @@ export const addMemories = async function (e) {
   const dateValue = inputDate.value;
   const image = inputImages.files[0];
 
+  console.log(locationValue, descriptionValue, dateValue, image);
+
   if (!memoriesForm.checkValidity()) return;
+
   e.preventDefault();
 
   try {
@@ -96,13 +100,15 @@ export const addMemories = async function (e) {
     form.append("location", locationValue);
     form.append("description", descriptionValue);
     form.append("date", dateValue);
-    form.append("photo", image);
+    form.append("profileImg", image);
 
-    await axios({
-      url: "/api/v1/users/memories",
+    const res = await axios({
       method: "PATCH",
+      url: "/api/v1/users/memories",
       data: form,
     });
+
+    console.log(res);
 
     //clearing all errors if succesfull
     clearingErrors();
@@ -113,6 +119,7 @@ export const addMemories = async function (e) {
     // changing route
     routeChanger("/profile");
   } catch (err) {
+    console.log(err.response.data);
     // clearingErrors;
     clearingErrors();
 

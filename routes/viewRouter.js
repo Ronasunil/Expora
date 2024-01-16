@@ -13,8 +13,8 @@ router
     bookingController.addBooking,
     viewHandler.getHome
   );
-router.route("/login").get(viewHandler.getLogin);
-router.route("/signup").get(viewHandler.getSignup);
+router.route("/login").get(authController.preventAuth, viewHandler.getLogin);
+router.route("/signup").get(authController.preventAuth, viewHandler.getSignup);
 router.route("/tours").get(authController.protect, viewHandler.showAllTours);
 
 router

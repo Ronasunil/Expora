@@ -204,11 +204,16 @@ exports.updateBookings = catchAsync(async (req, res) => {
 exports.deleteBooking = catchAsync(async (req, res) => {
   const { userId: bookingId } = req.params;
 
-  const booking = await Booking.findByIdAndDelete(bookingId);
+  const booking = await Booking.findByIdAndDelete(bookingId)
+    .populate("tour")
+    .populate("user");
 
   if (!booking) throw new AppError("Cannot find booking with this id");
 
-  res.status(204);
+  res.status(200).json({
+    status: "Success",
+    data: { booking },
+  });
 });
 
 // getting analytics of app

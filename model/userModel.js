@@ -113,7 +113,7 @@ const userSchema = new mongoose.Schema(
       {
         photo: {
           type: String,
-          reqquired: [true, "Please provide a image for your memories"],
+          required: [true, "Please provide a image for your memories"],
         },
         location: {
           type: String,
@@ -158,9 +158,7 @@ const userSchema = new mongoose.Schema(
       slugPaddingSize: 4,
       unique: true,
     },
-    wallet: {
-      type: Number,
-    },
+    wallet: [Array],
 
     passwordResetToken: {
       type: String,
@@ -259,18 +257,21 @@ userSchema.statics.deleteUser = async function (id) {
 userSchema.statics.updateUser = async function (obj, id) {
   const filteredObj = filterObj(obj, "role", "validUser");
 
-  if (obj.tourId) {
-    filteredObj.$pull = { idOfBookedTour: obj.tourId };
-  }
-
-  if (obj.price) {
-    filteredObj.$inc = { wallet: obj.price };
-  }
   const updatedUser = await this.findByIdAndUpdate(id, filteredObj, {
     new: true,
     runValidators: true,
   });
   if (!updatedUser) throw new AppError("user not found");
+  return updatedUser;
+};
+
+userSchema.statics.updateUserWallet = async function (obj, id) {
+  const updatedUser = await this.findByIdAndUpdate(id, {
+    $push: { wallet: obj },
+  });
+
+  if (!updatedUser) throw new AppError("User not found");
+
   return updatedUser;
 };
 

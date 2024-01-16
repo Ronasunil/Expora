@@ -70,6 +70,10 @@ body{
   display: none;
 }
 
+.hide{
+  display: none !important;
+}
+
 
 .item{
     font-weight: 500;
@@ -1171,3 +1175,42 @@ body{
 .feeedback-err{
   align-self:self-start;
 }
+
+.pagination{
+  grid-column: 1/-1;
+}
+
+
+.pagination-btns{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    grid-column: 1/-1;
+    gap: 2rem;
+}
+
+.page-number{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 3%;
+  border-radius: 50%;
+  background-color: #71C34E;
+  color: #fff;
+
+}
+
+
+.pagination-icon  {
+  color: #71C34E;
+  transition: all 0.5s;
+}
+
+.pagination-icon:hover{
+  cursor: pointer;
+  font-size: 20px;
+  color: #325622;
+}
+

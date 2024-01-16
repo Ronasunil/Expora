@@ -22,27 +22,18 @@ export const bookTour = async function (tourId, bookingDate) {
 };
 
 export const cancelBooking = async function (bookingId) {
-  try {
-    // deleting booking
-    const data = await axios({
-      method: "DELETE",
-      url: `/api/v1/bookings/${bookingId}`,
-    });
+  // deleting booking
+  const res = await axios({
+    method: "DELETE",
+    url: `/api/v1/bookings/${bookingId}`,
+  });
 
-    // Adding refund to wallet
+  const { booking } = res.data.data;
 
-    const price = +document.querySelector(".label-tour").dataset.tourPrice;
-
-    await axios({
-      method: "PATCH",
-      url: "/api/v1/users/update",
-      data: {
-        price,
-      },
-    });
-
-    location.assign("/");
-  } catch (err) {
-    console.log(err);
-  }
+  // adding refund wallet to user
+  await axios({
+    method: "PATCH",
+    url: "/api/v1/users/wallet",
+    data: { wallet: booking },
+  });
 };

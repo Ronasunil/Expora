@@ -3,7 +3,7 @@ extends _memories-base
 block content
     form.memories-inputs(action='')
       h1.heading Memories
-      img.memories-img(src=`/${memories.photo}` alt='Picture of your memory')
+      img.memories-img(src=`${memories.photo}` alt='Picture of your memory')
       div.input-location.column
         label.input-label Location
         input.input-memory-deatils.memories-location(type='text' value=`${memories.location}` readonly="readonly")

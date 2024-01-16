@@ -5,6 +5,8 @@ const mailer = require("./../utils/mailer");
 const AppError = require("../utils/AppError");
 const catchAsync = require("../utils/catchAsync");
 const User = require("./../model/userModel");
+const Booking = require("../model/bookingModel");
+const { findById } = require("../model/tourModel");
 
 const multerStorage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -30,7 +32,7 @@ exports.resizeImage = catchAsync(async (req, res, next) => {
   const randomInt = Math.random() * 1234342340000;
 
   const fileName = `/img/users/profile-pic${Date.now().toString()}-${randomInt.toString()}.jpeg`;
-
+  console.log(fileName);
   // passing it to req.body to update
   req.body.profileImg = fileName;
 
@@ -106,19 +108,23 @@ exports.update = catchAsync(async (req, res) => {
     );
 
   //update user
-  if (req.body.tourId) {
-    // cancelling tour
-    updatedUser = await User.updateUser(req.body, req.user.id, req.body.tourId);
-  } else {
-    // else run as updating tour
-    updatedUser = await User.updateUser(req.body, req.user.id);
-  }
+  // if (req.body.tourId) {
+  // cancelling tour
+  updatedUser = await User.updateUser(req.body, req.user.id, req.body.tourId);
+  // } else {
+  //   // else run as updating tour
+  //   updatedUser = await User.updateUser(req.body, req.user.id);
+  // }
 
-  res.status(200).json({
-    status: "Success",
-    message: "Updated successfully",
-    data: { updatedUser },
-  });
+  res.status(204);
+});
+
+// updating user wallet
+exports.updateWallet = catchAsync(async (req, res) => {
+  const { _id: userId } = req.user;
+  const wallet = req.body.wallet;
+
+  User.updateUserWallet(wallet, userId);
 });
 
 // adding or updating profile pic
@@ -244,8 +250,10 @@ exports.getMemories = (req, res) => {
 
 // adding memories
 exports.addMemories = catchAsync(async (req, res) => {
-  const { location, description, date } = req.body;
+  const { location, description, date, profileImg: memoriesPhoto } = req.body;
   const { _id } = req.user;
+
+  console.log("kl, heyhh");
 
   // getting current user
   const user = await User.findById(_id);
@@ -255,18 +263,34 @@ exports.addMemories = catchAsync(async (req, res) => {
     location,
     description,
     date: new Date(date).getTime(),
-    photo: `img/users/${req?.file?.filename ?? null}`,
+    photo: memoriesPhoto,
   };
 
   // updating it
-  await User.findByIdAndUpdate(
+  const user1 = await User.findByIdAndUpdate(
     _id,
     { $push: { memories } },
     { new: true, runValidators: true }
   );
 
+  if (!user1) throw new AppError("Can't find user", 404);
+
   res.status(200).json({
     status: "Success",
     memories: { user },
+  });
+});
+
+// getting user wallet
+exports.getUserWallet = catchAsync(async (req, res) => {
+  const { _id: userId } = req.user;
+  let userWallet = (await User.findById(userId).select("wallet")).wallet;
+
+  if (!userWallet) throw new AppError("Can't find user", 404);
+
+  res.status(200).json({
+    status: "Success",
+    size: userWallet.length,
+    data: { userWallet },
   });
 });
