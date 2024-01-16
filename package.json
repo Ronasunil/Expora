@@ -7,7 +7,7 @@
     "prod": "NODE_ENV=production nodemon server.js",
     "start": "node server.js",
     "start:dev": "NODE_ENV=development nodemon server.js",
-    "build:js": "parcel build ./public/js/index.js  --dist-dir ./public/js/dist",
+    "build:js": "parcel build ./public/js/index.js --dist-dir ./public/js/dist",
     "watch:js": "parcel watch ./public/js/index.js  --dist-dir ./public/js/dist"
   },
   "author": "Rona",

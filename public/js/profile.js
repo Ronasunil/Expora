@@ -1,8 +1,10 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 
-import { Chart } from "chart.js/auto";
+import { Chart, registerables } from "chart.js";
 import { saveAs } from "file-saver";
+
+Chart.register(...registerables);
 
 // DOM ELEMENTS
 const itemsContainer = document.querySelector(".dash-board-commodity");
@@ -198,6 +200,8 @@ const renderGraph = async function (value) {
       method: "GET",
       url: `/api/v1/bookings/stats/${value}`,
     });
+
+    console.log(data);
 
     const analytics = data.data.data.stat;
     const stats = analytics.map((stat) => stat.count);
