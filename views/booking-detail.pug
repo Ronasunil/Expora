@@ -20,4 +20,8 @@ block content
           input.booking-input.status(type="text" readonly value=`${booking.status}`)     
         .row-booking
           label.booking-info-label Booked date
-          input.booking-input.booked-date(type="text" readonly value=`${new Date(booking.createdAt).toLocaleDateString()}`)                             
+          input.booking-input.booked-date(type="text" readonly value=`${new Date(booking.createdAt).toLocaleDateString()}`)  
+        .row-booking
+          label.booking-info-label Booked date
+          input.booking-input.booked-date(type="text" readonly value=`${new Date(booking.tourBookingDate
+).toLocaleDateString()}`)
