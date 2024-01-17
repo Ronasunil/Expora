@@ -72,7 +72,8 @@ exports.verifyOtp = catchAsync(async (req, res) => {
 
   // resending otp
   if (resend) {
-    const user = User.findOne({ email: realOtp.email });
+    const user = await User.findOne({ email: realOtp.email });
+    console.log(user);
     const url = `${req.protocol}://${req.get("host")}/otp-verification`;
     sendOtp(user, url);
 
