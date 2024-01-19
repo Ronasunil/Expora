@@ -18,7 +18,6 @@ exports.checkOut = catchAsync(async (req, res) => {
   // const get tour
   const tour = await Tour.findById(tourId);
   let tourPrice = tour.finalPrice || tour.price;
-  tourPrice = tourPrice * Number.parseInt(peopleCount);
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],

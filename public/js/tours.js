@@ -5,6 +5,7 @@ const heading = document.querySelector(".tertiary-heading");
 const pageCount = document.querySelector(".page-number");
 const iconRight = document.querySelector(".icon-right");
 const iconLeft = document.querySelector(".icon-left");
+const checkBoxes = document.querySelectorAll(".checkbox-default");
 let page = 1;
 let skip = 7;
 
@@ -32,8 +33,12 @@ const getTours = async function () {
   return allTours;
 };
 
-const setLocalStorage = function (item, index) {
+const setCatogreyValue = function (item) {
   localStorage.setItem("selectValue", JSON.stringify(item));
+};
+
+const setFilterValue = function (item) {
+  localStorage.setItem("filterValue", JSON.stringify(item));
 };
 
 const getLocalStorage = function (key) {
@@ -62,6 +67,9 @@ const createMarkup = function (data) {
 
 const renderTour = function (tours) {
   tourContainer.innerHTML = "";
+  tours.length === 0
+    ? (heading.textContent = "No tour found")
+    : (heading.textContent = "Explore all the tours");
   const cloneTours = tours.slice(skip * page - skip, skip * page);
   console.log(cloneTours.length);
   if (cloneTours.length !== skip) iconRight.classList.add("hide");
@@ -94,11 +102,28 @@ export const searchTours = async function (e) {
 export const categorizeTour = async function (e) {
   tourContainer.innerHTML = "";
   const selectedOption = this.options[this.selectedIndex];
+  const filterValue = getLocalStorage("filterValue");
 
-  setLocalStorage(selectedOption.value);
+  setCatogreyValue(selectedOption.value);
+  if (selectedOption.value === "All") {
+    // clear all filter option
+    checkBoxes.forEach((el) => (el.checked = false));
 
+    // clearing localStorage
+    localStorage.clear();
+
+    // display every tour
+    const response = await (await fetch(`api/v1/tours`)).json();
+    const { tours } = response.data;
+
+    return renderTour(tours);
+  }
   const response = await (
-    await fetch(`api/v1/tours?${selectedOption.value}`)
+    await fetch(
+      `api/v1/tours?${selectedOption.value}${
+        filterValue ? "&" + filterValue : "&"
+      }`
+    )
   ).json();
   const { tours } = response.data;
 
@@ -125,7 +150,10 @@ export const renderTopTours = async function () {
 
 export const renderAllTours = async function () {
   const selectVal = getLocalStorage("selectValue");
-  const url = selectVal ? `/api/v1/tours?${selectVal}` : `/api/v1/tours`;
+  const filterValue = getLocalStorage("filterValue");
+  const url = selectVal
+    ? `/api/v1/tours?${selectVal}${filterValue ? "&" + filterValue : "&"}`
+    : `/api/v1/tours`;
   if (!tourContainer) return;
   tourContainer.innerHTML = "";
 
@@ -143,8 +171,10 @@ export const renderAllTours = async function () {
 export const renderFilterTour = async function (e) {
   // Elements
   const isEl = e.target.classList.contains("checkbox-default");
-  const checkBoxes = document.querySelectorAll(".checkbox-default");
 
+  const catogrey = getLocalStorage("selectValue");
+
+  const catogreyValue = catogrey ? `&${catogrey}` : "&";
   if (!isEl) return;
 
   //current checkbox
@@ -155,10 +185,14 @@ export const renderFilterTour = async function (e) {
     if (el !== item) item.checked = false;
   });
 
+  setFilterValue(el.value);
+
+  console.log(`api/v1/tours?${el.value}${catogreyValue}`);
+
   // sending req to database
   const res = await axios({
     method: "GET",
-    url: `api/v1/tours?${el.value}`,
+    url: `api/v1/tours?${el.value}${catogreyValue}`,
   });
 
   const { tours } = res.data.data;

@@ -65,9 +65,16 @@ app.use("/", viewErrorHandler);
 
 // for all unspecified routes
 app.all("*", (req, res) => {
+  if (req.headers.accept && req.headers.accept.includes("text/html")) {
+    return res.render("error", {
+      statusCode: 404,
+      message: `Can't find the requested url ${req.originalUrl} in the server`,
+    });
+  }
+
   res.status(404).json({
     status: "fail",
-    message: `Can't find the request url ${req.originalUrl} in the server`,
+    message: `Can't find the requested url ${req.originalUrl} in the server`,
   });
 });
 module.exports = app;

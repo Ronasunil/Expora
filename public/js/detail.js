@@ -216,13 +216,40 @@ const validatePeople = function (input) {
   return true;
 };
 
-export const displayChekout = function (e) {
+export const displayChekout = async function (e) {
   const { tourId, tourSlug, bookingDate } = e.target.dataset;
-  const peopleCount = document.getElementById("numberOfPeople").value;
+  const peopleCount = +document.getElementById("numberOfPeople").value;
   console.log(peopleCount);
   const isValid = validatePeople(peopleCount);
 
   if (!isValid) return;
+
+  try {
+    // getting current tour price
+    const res = await axios({
+      method: "GET",
+      url: `/api/v1/tours/${tourId}/price`,
+      // data:{
+      //   finalPrice:
+      // }
+    });
+
+    const { price } = res.data.data.tourPrice;
+    console.log(tourSlug);
+    // multiplying price
+    const finalPrice = price * peopleCount;
+
+    // updating tour with final price
+    await axios({
+      method: "PATCH",
+      url: `/api/v1/tours/${tourSlug}`,
+      data: {
+        finalPrice,
+      },
+    });
+  } catch (err) {
+    console.log(err);
+  }
 
   routeChanger(
     `/checkout/${tourSlug}?bookingDate=${bookingDate}&size=${peopleCount}`

@@ -21,6 +21,7 @@ export const applyCoupon = async function (e) {
       },
     });
     const finalPrice = res.data.data.finalPrice;
+
     couponErrLabel.classList.add("green-text");
     couponErrLabel.classList.remove("red-text");
     message = res.data.message;

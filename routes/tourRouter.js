@@ -34,11 +34,7 @@ router
     authController.restrictAccessTo("admin"),
     tourController.deleteTour
   )
-  .patch(
-    authController.protect,
-    authController.restrictAccessTo("admin"),
-    tourController.updateTour
-  );
+  .patch(authController.protect, tourController.updateTour);
 
 // getting updating tour by slug route
 router
@@ -64,5 +60,8 @@ router
 router
   .route("/:tourId/avialable-bookings")
   .get(authController.protect, tourController.getAvilableBookings);
+
+// route for getting tour price only
+router.route("/:tourId/price").get(tourController.getTourPrice);
 
 module.exports = router;

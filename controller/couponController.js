@@ -75,7 +75,7 @@ exports.getDiscountedPrice = catchAsync(async (req, res) => {
   const { couponCode, tourId } = req.body;
 
   // getting corresponding tour according to the tourId
-  const tour = await tourModel.findById(tourId).select("price");
+  const tour = await tourModel.findById(tourId).select("finalPrice");
   if (!tour) throw new AppError("Can't find a tour");
 
   // getting corresponding coupon according to coupon code
@@ -92,8 +92,12 @@ exports.getDiscountedPrice = catchAsync(async (req, res) => {
   // calculating percentage
   const { discountPercentage } = coupon;
 
-  const discountedValue = (tour.price * discountPercentage) / 100;
-  const finalPrice = Math.round(tour.price - discountedValue);
+  console.log(tour.finalPrice, "klklklk");
+
+  const discountedValue = (tour.finalPrice * discountPercentage) / 100;
+  const finalPrice = Math.round(tour.finalPrice - discountedValue);
+
+  console.log(finalPrice);
 
   // adding final price to tour
   await Tour.findByIdAndUpdate(

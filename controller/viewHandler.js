@@ -5,6 +5,7 @@ const catchAsync = require("../utils/catchAsync");
 const Tour = require("./../model/tourModel");
 const User = require("./../model/userModel");
 const Booking = require("./../model/bookingModel");
+const Coupon = require("../model/couponModel");
 
 exports.getHome = catchAsync(async (req, res) => {
   const tours = await Tour.find().limit(3);
@@ -116,8 +117,13 @@ exports.renderCheckout = catchAsync(async (req, res) => {
   const { bookingDate, size } = req.query;
 
   const tour = await Tour.findOne({ slug: tourSlug });
+  const coupons = await Coupon.find({ isValid: true }).select(
+    "couponCode -_id"
+  );
 
-  res.render("checkout", { tour, bookingDate, size });
+  console.log(coupons);
+
+  res.render("checkout", { tour, bookingDate, size, coupons });
 });
 
 exports.renderCreateCoupon = (req, res) => {

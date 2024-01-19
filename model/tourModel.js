@@ -151,6 +151,7 @@ tourSchema.statics.deleteTour = async function (id) {
 
 // update tour
 tourSchema.statics.updateTour = async function (slug, body) {
+  console.log(slug);
   const updatedTour = await this.findOneAndUpdate({ slug: slug }, body, {
     new: true,
     runValidators: true,

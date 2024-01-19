@@ -121,9 +121,11 @@ exports.resizeAndUploadTourImages = catchAsync(async function (req, res, next) {
 });
 
 exports.updateTour = catchAsync(async (req, res) => {
-  const { slug } = req.params;
+  const { id } = req.params;
 
-  const updatedTour = await Tour.updateTour(slug, req.body);
+  const updatedTour = await Tour.updateTour(id, req.body);
+
+  console.log(req.body);
 
   res.status(200).json({
     status: "success",
@@ -185,5 +187,18 @@ exports.getAvilableBookings = catchAsync(async (req, res) => {
   res.status(200).json({
     status: "Success",
     data: { bookingTourDates },
+  });
+});
+
+exports.getTourPrice = catchAsync(async (req, res) => {
+  const { tourId } = req.params;
+
+  const tourPrice = await Tour.findById(tourId).select("price -_id");
+
+  if (!tourPrice) throw new AppError("Can't find tour", 404);
+
+  res.status(200).json({
+    status: "Success",
+    data: { tourPrice },
   });
 });

@@ -20,7 +20,7 @@ head
       h2= tour.tourName
       .product-details
         .price-info
-          p.product-price-label Price: $#{tour.price * Number.parseInt(size)} 
+          p.product-price-label Price: $#{tour.finalPrice} 
 
         h4.product-description= tour.description 
     .rightside
@@ -34,7 +34,10 @@ head
         p Coupon
         .row
           .column
-            input.input-coupon.coupon(type='text'  maxlength="6")
+            input.input-coupon.coupon(type='search' list="coupons-list"  maxlength="6")
+            datalist#coupons-list 
+              each coupon in coupons
+                option(value=`${coupon.couponCode}`)   
             p.coupon-err-label
           button.button.coupon-apply(data-tour-id=`${tour._id}`)  Apply coupon
         .expcvv
