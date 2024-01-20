@@ -33,7 +33,6 @@ export const applyCoupon = async function (e) {
   } catch (err) {
     couponErrLabel.classList.remove("green-text");
     couponErrLabel.classList.add("red-text");
-    discountPriceLabel.classList.add("hide");
     message = err.response.data.message;
     couponErrLabel.textContent = message;
   }
