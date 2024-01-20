@@ -208,3 +208,17 @@ p{
     display: flex;
     flex-direction: column;
 }
+
+
+.strike{
+    text-decoration: line-through;
+}
+
+.discount-price-label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #71C34E;
+}
+.hide {
+    display: none;
+}

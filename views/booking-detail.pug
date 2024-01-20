@@ -32,4 +32,8 @@ block content
           .column-booking
             label.booking-info-label Mail id
             input.booking-input.booked-date(type="text" readonly value=`${booking.user.email}`)  
+        .booking-rows    
+          .column-booking
+            label.booking-info-label Coupon used
+            input.booking-input.booked-date(type="text" readonly value=`${booking.couponCode === "" ? "No coupon used" : booking.couponCode}`)    
         a.btn(href=`/tour/${booking.tour.slug}`) Tour info

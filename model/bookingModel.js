@@ -53,6 +53,11 @@ const bookingSchema = new mongoose.Schema(
     discountPrice: {
       type: Number,
     },
+
+    couponCode: {
+      type: String,
+      default: "",
+    },
   },
   {
     toJSON: { virtuals: true },

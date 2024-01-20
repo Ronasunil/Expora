@@ -13,7 +13,7 @@ const AppError = require("../utils/AppError");
 
 exports.checkOut = catchAsync(async (req, res) => {
   const { tourId } = req.params;
-  const { bookingDate, peopleCount } = req.body;
+  const { bookingDate, peopleCount, couponCode } = req.body;
 
   // const get tour
   const tour = await Tour.findById(tourId);
@@ -25,7 +25,7 @@ exports.checkOut = catchAsync(async (req, res) => {
       tour._id
     }&price=${tourPrice}&userId=${
       req.user._id
-    }&bookingDate=${bookingDate}&peopleCount=${peopleCount}`,
+    }&bookingDate=${bookingDate}&peopleCount=${peopleCount}&couponCode=${couponCode}`,
     cancel_url: `${req.protocol}://${req.get("host")}/`,
     customer_email: req.user.email,
     mode: "payment",
@@ -62,7 +62,8 @@ exports.checkOut = catchAsync(async (req, res) => {
 });
 
 exports.addBooking = catchAsync(async (req, res, next) => {
-  const { price, tourId, userId, bookingDate, peopleCount } = req.query;
+  const { price, tourId, userId, bookingDate, peopleCount, couponCode } =
+    req.query;
 
   // check if  price tour id and user id exists
   if (!price && !tourId && !userId) return next();
@@ -82,6 +83,7 @@ exports.addBooking = catchAsync(async (req, res, next) => {
     user: userId,
     price: price,
     tourBookingDate: bookingDate,
+    couponCode,
     peopleCount,
   });
 

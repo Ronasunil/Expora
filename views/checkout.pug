@@ -21,6 +21,7 @@ head
       .product-details
         .price-info
           p.product-price-label Price: $#{tour.finalPrice} 
+          p.discount-price-label.hide 
 
         h4.product-description= tour.description 
     .rightside
@@ -34,7 +35,7 @@ head
         p Coupon
         .row
           .column
-            input.input-coupon.coupon(type='search' list="coupons-list"  maxlength="6")
+            input.input-coupon.coupon(type='search' list="coupons-list" value=""  maxlength="6")
             datalist#coupons-list 
               each coupon in coupons
                 option(value=`${coupon.couponCode}`)   

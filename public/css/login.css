@@ -58,7 +58,7 @@ body{
 
 .detail-box{
     display: flex;
-    padding: 4rem 1rem;
+    padding: 1rem 1rem;
     justify-content: center;
     align-items: center;
     flex-direction: column;
